@@ -20,38 +20,31 @@
 
     let brandScroller;
     onMount(()=>{
-        
         const totalScrollable = brandScroller.scrollWidth;
-            const screenWidth = screen.width;
-            const difference = totalScrollable - screenWidth;
-            const iterWidth = 6;
-            let iterCount = 0;
-            const totalIterParts = Math.floor(difference/iterWidth) - 1 ;
-
-            if(totalScrollable > screenWidth){
-                setInterval(()=>{
-                    brandScroller.scrollTo({ left: iterWidth*iterCount });
-
-                    if(iterCount === (totalIterParts+2)){
-                        iterCount = 0;
-                    }else{
-                        iterCount += 1;
-                    }
-
-
-                }, 100);
-            }
-
+        const screenWidth = screen.width;
+        const difference = totalScrollable - screenWidth;
+        const iterWidth = 6;
+        let iterCount = 0;
+        const totalIterParts = Math.floor(difference/iterWidth) - 1 ;
+        if(totalScrollable > screenWidth){
+            setInterval(()=>{
+                brandScroller.scrollTo({ left: iterWidth*iterCount });
+                if(iterCount === (totalIterParts+2)){
+                    iterCount = 0;
+                }else{
+                    iterCount += 1;
+                }
+            }, 100);
+        }
     });
-
 </script>
 <div class="flex justify-center">
-    <div class="flex justify-between py-4 pl-4 pr-10 shadow-2xl bg-white absolute top-4 w-11/12">
+    <div class="flex justify-between py-4 pl-4 pr-10 shadow-2xl bg-white rounded absolute top-4 w-11/12">
         <div class="flex">
             <img height="100" width="100" class="block h-16 w-16" src="/favicon.png" alt="TSS Logo" />
             <h2 class="block my-auto ml-4 font-display text-3xl text-gray-900" >Textile Sourcing Solutions</h2>
         </div>
-        <div class="flex justify-between space-x-6 2xl:text-xl xl:text-lg">
+        <div class="flex justify-between space-x-6 text-lg font-display">
             <div class="my-auto">
                 <a class="hover:text-tss-600" href="/" >Home</a>
             </div>
@@ -81,8 +74,11 @@
                 </p>
             </div>
             <div class="mt-7">
-                <a href="/contact" class="bg-tss-600 text-white p-4 uppercase font-extrabold text-lg rounded-md" >
+                <a href="/contact" class="bg-tss-600 text-white p-4 px-6 font-extrabold text-lg rounded-full border-2 border-tss-200 hover:shadow-xl hover:border-tss-accent " >
                     Contact Us
+                    <svg class="inline fill-current" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11H2V13H18.17Z"></path>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -108,4 +104,17 @@
     </div>
 </div>
 
-<div class="h-28"></div>
+<div class="2xl:px-28 lg:px-10 py-20">
+    <div class="grid grid-flow-row grid-cols-2">
+        <div class="col-span-1" >
+            <p class="text-xl"  >Our Mission</p>
+            <div class="w-7 h-1 bg-tss-600 mt-2"></div>
+            <h3 class="text-5xl font-display text-tss-accent mt-2" >Efficient, Sustainable and Ethical Future</h3>
+        </div>
+        <div class="col-span-1">
+            <img class="relative rounded-md h-72 z-50 border-b-4 border-r-4 border-tss-accent shadow-md" alt="bg" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_400/v1633712398/tss/pexels-ksenia-chernaya-3965543.png" />
+            <img class="-right-24 -top-36 -bottom-10 relative rounded-md border-b-4 border-r-4 border-tss-accent shadow-md z-10" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_600/v1633886133/tss/pexels-meruyert-gonullu-6034060.png" />
+            <img class="h-60 -top-60 -right-36 relative rounded-md border-b-4 border-r-4 border-tss-accent shadow-md z-30" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_400/v1633787200/tss/pexels-ron-lach-9594686.png" alt="shirtas" />
+        </div>
+    </div>
+</div>
