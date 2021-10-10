@@ -5,7 +5,7 @@ const config = {
 	],
 	theme: {
 		fontFamily: {
-			body: ['Noto Sans Display', 'sans-serif'],
+			body: ['Roboto', 'sans-serif'],
 			display: ['Oswald', 'sans-serif']
 		},
 		extend: {
