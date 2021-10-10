@@ -15,6 +15,36 @@
         }
     } 
 </style>
+<script>
+    import {onMount} from "svelte";
+
+    let brandScroller;
+    onMount(()=>{
+        
+        const totalScrollable = brandScroller.scrollWidth;
+            const screenWidth = screen.width;
+            const difference = totalScrollable - screenWidth;
+            const iterWidth = 6;
+            let iterCount = 0;
+            const totalIterParts = Math.floor(difference/iterWidth) - 1 ;
+
+            if(totalScrollable > screenWidth){
+                setInterval(()=>{
+                    brandScroller.scrollTo({ left: iterWidth*iterCount });
+
+                    if(iterCount === (totalIterParts+2)){
+                        iterCount = 0;
+                    }else{
+                        iterCount += 1;
+                    }
+
+
+                }, 100);
+            }
+
+    });
+
+</script>
 <div class="flex justify-center">
     <div class="flex justify-between py-4 pl-4 pr-10 shadow-2xl bg-white absolute top-4 w-11/12">
         <div class="flex">
@@ -58,3 +88,24 @@
         </div>
     </div>
 </div>
+
+<div class="py-3 pr-3 bg-gray-100">
+    <h3 class="text-3xl text-center font-display text-gray-600"> Our International Clientele </h3>
+    <div bind:this={brandScroller} style="scroll-behavior: smooth;" class="w-full overflow-x-hidden">
+        <div class="flex flex-row space-x-6 mt-3">
+            <img class="block" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />
+            <img class="block w-36" src="https://res.cloudinary.com/poorna/image/upload/v1633870707/tss/superdry.png" alt="Superdry" />
+            <img alt="American Eagle" class="block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/American-Eagle-Logo-1985.png" />
+            <img alt="Hollister" class="block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Hollister-symbol.png" />
+            <img alt="Ralph Lauren" class="block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />
+            <img alt="Champion" class="block h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/tss/Champion-logo.png" />
+            <img alt="Liliy Pulitzer" class="block h-16 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633871690/tss/lilly-pulitzer-logo_0.png" />
+            <img alt="Easter Mountain Sports" class="block my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_80/v1633870854/tss/eastern-mountain-sports-logo-05F9379E20-seeklogo.com.png" />
+            <img alt="Amazon" class="block my-auto h-14" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870945/tss/amazon-logo-transparent.png" />
+            <img alt="Pantaloons" class="block my-auto h-14" src="https://res.cloudinary.com/poorna/image/upload/v1633871039/tss/Pantaloons-Gift-Voucher-SDL026711860-1-90e34.png" />
+            <img alt="Being Human" class="block my-auto h-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_150/v1633871111/tss/41YTcyA8eeL.png" />
+        </div>
+    </div>
+</div>
+
+<div class="h-28"></div>
