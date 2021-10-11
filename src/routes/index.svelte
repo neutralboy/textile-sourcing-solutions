@@ -8,6 +8,9 @@
         .mainBg{
             background-image: url(https://res.cloudinary.com/poorna/image/upload/v1633852557/tss/pexels-pixabay-236748-rbb.png);
         }
+        .mission-bg{
+            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_2000/v1633962358/tss/pexels-los-muertos-crew-7205803.png);
+        }
     }
     @media only screen and (max-width: 768px) {
         .mainBg{
@@ -86,7 +89,7 @@
 </div>
 
 <div class="py-3 pr-3 bg-gray-100">
-    <h3 class="text-3xl text-center font-display text-gray-600"> Our International Clientele </h3>
+    <h3 class="text-2xl text-center font-display text-gray-600"> Our International Clientele </h3>
     <div bind:this={brandScroller} style="scroll-behavior: smooth;" class="w-full overflow-x-hidden">
         <div class="flex flex-row space-x-6 mt-3">
             <img class="block" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />
@@ -106,15 +109,66 @@
 
 <div class="2xl:px-28 lg:px-10 py-20">
     <div class="grid grid-flow-row grid-cols-2">
-        <div class="col-span-1" >
-            <p class="text-xl"  >Our Mission</p>
+        <div class="col-span-1 my-auto" >
+            <div class="block" >
+            <p class="text-xl"  >Our Vision</p>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-            <h3 class="text-5xl font-display text-tss-accent mt-2" >Efficient, Sustainable and Ethical Future</h3>
+            <h3 class="lg:text-5xl 2xl:text-6xl font-display text-tss-accent mt-2" >Efficient, Sustainable and Ethical Future</h3>
+
+            <div class="mt-4 text-lg 2xl:w-3/4 ">
+                <p>
+                    How <span class="text-tss-600 font-display">TSS</span> can help you service your customers:
+                </p>
+                <ul class="ml-3 mt-2 list-disc list-inside">
+                    <li> We research and isolate key, relevant trends on a frequent basis </li>
+                    <li> We Comp shop to understand strengths and weaknesses of the competition to identify areas of opportunity </li>
+                    <li> Acting as our clients Asia office, we create seasonal concept boards, fabric presentation and sample collection based on trend research as well as customer’s specific direction </li>
+                    <li> We ensure brand cohesiveness across categories for each customer </li>
+                    <li> We strengthen the business with our current customers by delivering monthly collections of newness to create excitement and keep them engaged </li>
+                    <li> We call this our ‘Magic Box’ & it consists of our latest works in fabric, apparel, scarves, handbags, home goods </li>
+                </ul>
+            </div>
         </div>
-        <div class="col-span-1">
-            <img class="relative rounded-md h-72 z-50 border-b-4 border-r-4 border-tss-accent shadow-md" alt="bg" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_400/v1633712398/tss/pexels-ksenia-chernaya-3965543.png" />
-            <img class="-right-24 -top-36 -bottom-10 relative rounded-md border-b-4 border-r-4 border-tss-accent shadow-md z-10" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_600/v1633886133/tss/pexels-meruyert-gonullu-6034060.png" />
-            <img class="h-60 -top-60 -right-36 relative rounded-md border-b-4 border-r-4 border-tss-accent shadow-md z-30" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_400/v1633787200/tss/pexels-ron-lach-9594686.png" alt="shirtas" />
+
+            <!-- <div class="mt-4 w-4/5" >
+                <p class="text-lg">
+                    At TSS our passion for detail, transparency and customer satisfaction which are the key driving force behind strong partnership we built over the years. Head quartered at Bangalore with our vendors spread around Bangalore, Tirpur, Delhi-NCR, Hosur, Bijapur and Bangaladesh.
+                </p>
+            </div> -->
+
+            <!-- <h4 class="text-2xl font-display mt-5" >Our Mission</h4>
+            <p class="mt-3 text-lg w-4/5">
+                We are on a mission to leverage our experience, Knowledge & Network to help Global & India Retail brands build and grow their business in the Indian Sub-continent
+            </p> -->
+
+        </div>
+        <div class="col-span-1 my-auto">
+            <div class="flex justify-start" >
+                <img class="relative -right-32 rounded-br-md z-10 border-b-8 border-r-8 border-white" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_600/v1633886133/tss/pexels-meruyert-gonullu-6034060.png" />
+                <img class="rounded-md relative -left-64 -bottom-10  border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_604/v1633961746/tss/pexels-dids-3754600.png" alt="BG"  />
+                                
+            </div>
         </div>
     </div>
 </div>
+
+
+<div class="mission-bg bg-no-repeat bg-cover bg-bottom bg-fixed" >
+    <div class="px-36 py-16" >
+        <h4 class="text-3xl text-gray-200" >
+            Our Mission
+        </h4>
+        <div class="w-7 h-1 bg-tss-accent mt-2"></div>
+        <h3 class="text-5xl font-display text-tss-200 mt-4" > We are on a mission to leverage our experience, knowledge & network to help global & Indian retail brands build and grow their business in the Indian Sub-continent
+        </h3>
+        <a href="/" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl text-lg " >
+            Reach out to us
+            <svg class="fill-current text-white inline" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11H2V13H18.17Z"></path>
+                </svg>
+                
+        </a>
+    </div>
+</div>
+
+<div class="h-60" ></div>
