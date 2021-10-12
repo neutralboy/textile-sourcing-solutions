@@ -1,27 +1,36 @@
 <svelte:head>
     <title>
-        Textile Sourcing Solutions
+        Textile Sourcing Solutions | Your trusted textile sourcing and solutions partner
     </title>
+    <meta name="Description" content="Headquartered in Bangalore TSS has been a leading ethical apparel and accessories sourcing solutions provider since 23 years"  >
+    <meta property="og:title" content="Textile Sourcing Solutions | Your trusted textile sourcing and solutions partner" />
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:url" content="https://tss.com" /> -->
 </svelte:head>
 <style>
     @media only screen and (min-width: 992px) {
         .mainBg{
             background-image: url(https://res.cloudinary.com/poorna/image/upload/v1633852557/tss/pexels-pixabay-236748-rbb.png);
+            min-height: 85vh;
         }
         .mission-bg{
             background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_2000/v1633962358/tss/pexels-los-muertos-crew-7205803.png);
         }
-        .form-bg{
+        /* .form-bg{
             background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto,w_1500/v1634055337/tss/pexels-anni-roenkae-2860807_16_9.png);
-        }
+        } */
     }
     @media only screen and (max-width: 768px) {
         .mainBg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,h_1000/v1633850209/tss/pexels-pixabay-236748_4_3.png);
+            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,h_800/v1634058073/tss/pexels-pixabay-236748_4_3.png);
+            min-height: 50vh;
         }
-        .form-bg{
+        .mission-bg{
+            background-image: url(https://res.cloudinary.com/poorna/image/upload/q_auto/v1634058846/tss/pexels-los-muertos-crew-7205803_4_3.png);
+        }
+        /* .form-bg{
             background-image: url(https://res.cloudinary.com/poorna/image/upload/q_auto/v1634055373/tss/pexels-anni-roenkae-2860807_4_3.png);
-        }
+        } */
     } 
 </style>
 <script context="module" >
@@ -29,6 +38,11 @@
 </script>
 <script>
     import {onMount} from "svelte";
+
+    let navOpen = false;
+    const toggleNav = () => {
+        navOpen = !navOpen
+    };
 
     let brandScroller;
     onMount(async ()=>{
@@ -140,10 +154,10 @@
         }
     ];
 
-
-
 </script>
-<div class="flex justify-center">
+
+
+<div class="hidden lg:flex justify-center">
     <div class="flex justify-between py-4 pl-4 pr-10 shadow-2xl bg-white rounded absolute top-4 w-11/12">
         <div class="flex">
             <img height="100" width="100" class="block h-16 w-16" src="/favicon.png" alt="TSS Logo" />
@@ -154,24 +168,47 @@
                 <a class="hover:text-tss-600" href="/" >Home</a>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="/" >Services</a>
+                <a class="hover:text-tss-600" href="#services" >Services</a>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="/about" >About</a>
+                <a class="hover:text-tss-600" href="#about" >About</a>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="/contact" >Contact</a>
+                <a class="hover:text-tss-600" href="#contact" >Contact</a>
             </div>
         </div>
     </div>
 </div>
 
-<div style="min-height: 85vh" class="mainBg bg-no-repeat bg-cover p-0 m-0 bg-left">
-    <div class="2xl:px-56 2xl:py-28 lg:px-32 lg:py-14">
-        <div class="mt-32 w-3/5">
-            <h3 class="text-tss-600 font-black text-xl" >Since 1998</h3>
-            <h1 class="font-display text-6xl text-white">Your trusted textile sourcing and solutions partner</h1>
-            <div class="mt-8">
+<div class="lg:hidden sticky top-0 shadow-md w-full z-50 bg-tss-200 h-14">
+    <div class="flex justify-between p-2" >
+        <div class="flex justify-start">
+            <img alt="TSS Logo" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_40/v1634060000/tss/favicon.png" >
+            <h2 class="text-2xl font-display text-black ml-2 my-auto" >Textile Sourcing Solutions</h2>
+        </div>
+        <button on:click={toggleNav} class="block my-auto mr-3" >
+            <svg class="{navOpen ? 'text-gray-400 block fill-current' : 'block fill-current'}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 21H13V15H21V21ZM11 21H3V11H11V21ZM21 13H13V3H21V13ZM11 9H3V3H11V9Z"></path>
+                </svg>
+        </button>
+    </div>
+    <div class="{navOpen ? 'bg-white px-2 py-2 flex flex-col text-lg space-y-2 shadow-md' : 'hidden'}" >
+        <a class="block" href="/" >Home</a>
+        <a class="block" href="#about" >About</a>
+        <a class="block" href="#services" >Services</a>
+        <a class="block" href="#contact" >Contact</a>
+    </div>
+
+</div>
+
+
+
+<div class="mainBg bg-no-repeat bg-cover p-0 m-0 bg-left">
+    <div class="2xl:px-56 2xl:py-28 lg:px-32 lg:py-14 px-6">
+        <div class="lg:mt-32 lg:w-3/5 pt-4">
+            <h3 class="text-tss-600 font-black lg:text-xl text-base" >Since 1998</h3>
+            <h1 class="font-display lg:text-6xl text-5xl text-white">Your trusted textile sourcing and solutions partner</h1>
+            <div class="lg:mt-8 mt-4">
                 <p class="text-gray-100 text-lg">
                     Headquartered in Bangalore TSS has been a leading ethical apparel and accessories sourcing solutions provider since 23 years.
                     <br/>
@@ -179,7 +216,7 @@
                 </p>
             </div>
             <div class="mt-7">
-                <a href="/contact" class="bg-tss-600 text-white p-4 px-6 font-extrabold text-lg rounded-full border-2 border-tss-200 hover:shadow-xl hover:border-tss-accent " >
+                <a href="#contact" class="bg-tss-600 text-white p-4 px-6 font-extrabold lg:text-lg rounded-full border-2 border-tss-200 hover:shadow-xl hover:border-tss-accent " >
                     Contact Us
                     <svg class="inline fill-current" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11H2V13H18.17Z"></path>
@@ -190,7 +227,8 @@
     </div>
 </div>
 
-<div class="py-3 pr-3 bg-gray-100">
+<!-- CLIENT CAROUSEL -->
+<div class="py-3 bg-gray-100">
     <h3 class="text-2xl text-center font-display text-gray-600"> Our International Clientele </h3>
     <div bind:this={brandScroller} style="scroll-behavior: smooth;" class="w-full overflow-x-hidden">
         <div class="flex flex-row space-x-6 mt-3">
@@ -209,15 +247,16 @@
     </div>
 </div>
 
-<div class="2xl:px-44 lg:px-14 py-20">
-    <div class="grid grid-flow-row grid-cols-2">
+<!-- ABOUT US -->
+<div id="about" class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6">
+    <div class="lg:grid lg:grid-flow-row lg:grid-cols-2">
         <div class="col-span-1 my-auto" >
             <div class="block" >
             <p class="text-xl"  >Our Vision</p>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-            <h3 class="lg:text-5xl 2xl:text-6xl font-display text-tss-accent mt-2" >Efficient, Sustainable and Ethical Future</h3>
+            <h3 class="lg:text-5xl 2xl:text-6xl text-4xl font-display text-tss-accent mt-2" >Efficient, Sustainable and Ethical Future</h3>
 
-            <div class="mt-4 text-lg 2xl:w-3/4 ">
+            <div class="mt-4 lg:text-lg 2xl:w-3/4 ">
                 <p>
                     How <span class="text-tss-600 font-display">TSS</span> can help you service your customers:
                 </p>
@@ -234,25 +273,25 @@
 
         </div>
         <div class="col-span-1 my-auto">
-            <div class="flex justify-start" >
-                <img class="relative -right-32 rounded-br-md z-10 border-b-8 border-r-8 border-white" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_600/v1633886133/tss/pexels-meruyert-gonullu-6034060.png" />
-                <img class="rounded-md relative -left-64 -bottom-10  border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_604/v1633961746/tss/pexels-dids-3754600.png" alt="BG"  />
+            <div class="flex lg:justify-start justify-center lg:mt-0 mt-4" >
+                <img class="relative lg:-right-32 h-96 lg:h-auto rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_600/v1633886133/tss/pexels-meruyert-gonullu-6034060.png" />
+                <img class="lg:h-auto h-80 rounded-md relative hidden lg:block lg:-left-64  lg:-bottom-10 border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_604/v1633961746/tss/pexels-dids-3754600.png" alt="BG"  />
                                 
             </div>
         </div>
     </div>
 </div>
 
-
-<div class="mission-bg bg-no-repeat bg-cover bg-bottom" >
-    <div class="2xl:px-36 lg:px-14 py-16" >
-        <h4 class="text-3xl text-gray-200" >
+<!-- OUR MISSION -->
+<div class="mission-bg bg-no-repeat bg-cover bg-center lg:bg-bottom" >
+    <div class="2xl:px-36 lg:px-14 py-16 px-6" >
+        <h4 class="lg:text-3xl text-xl text-gray-200" >
             Our Mission
         </h4>
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
-        <h3 class="text-5xl font-display text-tss-200 mt-4" > We are on a mission to leverage our experience, knowledge & network to help global & Indian retail brands build and grow their business in the Indian Sub-continent
+        <h3 class="lg:text-5xl text-4xl font-display text-tss-200 mt-4" > We are on a mission to leverage our experience, knowledge & network to help global & Indian retail brands build and grow their business in the Indian Sub-continent
         </h3>
-        <a href="/contact" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl text-lg ring-2 hover:ring-4" >
+        <a href="#contact" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl lg:text-lg ring-2 hover:ring-4" >
             Reach out to us
             <svg class="fill-current text-white inline" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11H2V13H18.17Z"></path>
@@ -261,17 +300,18 @@
     </div>
 </div>
 
-<div class="2xl:px-44 lg:px-20 py-20 bg-tss-accent" >
+<!-- OUR SERVICES -->
+<div id="services" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-accent" >
     <div>
         <h4 class="text-xl text-gray-200" >Our Services</h4>
         <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-        <h1 class="text-5xl font-display text-white mt-3" > We provide 360-degree solution to our business partners </h1>
+        <h1 class="lg:text-5xl text-4xl font-display text-white mt-3" > We provide 360-degree solution to our business partners </h1>
     </div>
-    <div class="grid grid-flow-row grid-cols-4 mt-10 grid-rows-3" >
+    <div class="grid grid-flow-row lg:grid-cols-4 grid-cols-2 mt-10 lg:grid-rows-3" >
         
         {#each services as {name, image}}
 
-        <div class="col-span-1 mx-3 my-2">
+        <div class="col-span-1 lg:mx-3 m-1 lg:my-2">
             <div class="bg-tss-200 py-6 px-4 shadow-md rounded border-b-4 border-tss-600 border-solid h-full flex flex-col justify-between" >
                 <div class="flex justify-center" >
                     <div class="text-center rounded-full bg-gray-200 inline-block p-6 my-auto" >
@@ -290,28 +330,29 @@
     </div>
 </div>
 
-
-<div class="2xl:px-44 lg:px-20 py-20" >
+<!-- PARTNER LOCATIONS -->
+<div class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6" >
     <div>
-        <div class="w-3/4" >
-            <h3 class="text-5xl font-display text-gray-800" >Partner locations</h3>
+        <div class="lg:w-3/4" >
+            <h3 class="lg:text-5xl text-4xl font-display text-gray-800" >Partner locations</h3>
             <div class="w-7 h-1 bg-tss-accent mt-2"></div>
-            <div class="mt-6 text-lg">
+            <div class="mt-6 lg:text-lg">
                 <p>
                     Work with our partners all over the Indian Subcontinent to get the best in quality products that speak for your brand.
                 </p>
             </div>
-            <div class="mt-10" style="height: 500px" id="chartdiv" ></div>
+            <div class="lg:mt-10" style="height: 500px" id="chartdiv" ></div>
         </div>
     </div>
 </div>
 
-<div class="2xl:px-44 lg:px-20 py-20 bg-tss-200" >
-    <div class="w-3/4" >
+<!-- CONTACT US -->
+<div id="contact" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200" >
+    <div class="lg:w-3/4" >
         <div>
-            <h3 class="text-tss-accent text-5xl font-display mt-2" > Reach out to us </h3>
+            <h3 class="text-tss-accent lg:text-5xl text-4xl font-display mt-2" > Reach out to us </h3>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-            <p class="mt-3 text-lg" >
+            <p class="mt-3 lg:text-lg" >
                 Find out how TSS can help you. Fill the form and we'll reach out to you.
             </p>
         </div>
@@ -370,19 +411,16 @@
 
 
 
-<div class="bg-tss-200 pt-4 sm:pt-10 lg:pt-12 font-body">
+<div class="bg-tss-200   pt-4 sm:pt-10 lg:pt-12 font-body">
     <footer class="max-w-screen-2xl px-4 md:px-8 mx-auto">
       <div class="flex flex-col items-center border-t pt-6">
         <!-- nav - start -->
         <nav class="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 md:gap-6 mb-4">
-          <a href="#" class="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">About</a>
-          <a href="#" class="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Vision</a>
-          <a href="#" class="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Services</a>
-          <a href="#" class="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Contact</a>
+          <a href="#about" class="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">About</a>
+          <a href="#services" class="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Services</a>
+          <a href="#contact" class="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Contact</a>
         </nav>
-        <!-- nav - end -->
-
-  
+        <!-- nav - end -->  
       <div class="text-gray-400 text-sm text-center py-8">
         © 2021 - Present Textile Sourcing Solutions. All rights reserved.
       </div>
