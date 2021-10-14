@@ -10,11 +10,11 @@
 <style>
     @media only screen and (min-width: 992px) {
         .mainBg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/v1633852557/tss/pexels-pixabay-236748-rbb.png);
+            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_2000/tss/clark-street-mercantile-qnKhZJPKFD8-unsplash.png);
             min-height: 85vh;
         }
         .mission-bg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_2000/v1633962358/tss/pexels-los-muertos-crew-7205803.png);
+            background-image: url(https://res.cloudinary.com/poorna/image/upload/tss/WhatsApp_Image_2021-10-14_at_11.43.01.png);
         }
         /* .form-bg{
             background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto,w_1500/v1634055337/tss/pexels-anni-roenkae-2860807_16_9.png);
@@ -161,7 +161,7 @@
     <div class="flex justify-between py-4 pl-4 pr-10 shadow-2xl bg-white rounded absolute top-4 w-11/12">
         <div class="flex">
             <img height="100" width="100" class="block h-16 w-16" src="/favicon.png" alt="TSS Logo" />
-            <h2 class="block my-auto ml-4 font-display text-3xl text-gray-900" >Textile Sourcing Solutions</h2>
+            <h2 class="block my-auto ml-4 font-display text-3xl text-gray-900" >Textile Sourcing Services</h2>
         </div>
         <div class="flex justify-between space-x-6 text-lg font-display">
             <div class="my-auto">
@@ -192,7 +192,7 @@
                 </svg>
         </button>
     </div>
-    <div class="{navOpen ? 'bg-white px-2 py-2 flex flex-col text-lg space-y-2 shadow-md' : 'hidden'}" >
+    <div on:click={toggleNav} class="{navOpen ? 'bg-white px-2 py-2 flex flex-col text-lg space-y-2 shadow-md' : 'hidden'}" >
         <a class="block" href="/" >Home</a>
         <a class="block" href="#about" >About</a>
         <a class="block" href="#services" >Services</a>
@@ -206,13 +206,14 @@
 <div class="mainBg bg-no-repeat bg-cover p-0 m-0 bg-left">
     <div class="2xl:px-56 2xl:py-28 lg:px-32 lg:py-14 px-6">
         <div class="lg:mt-32 lg:w-3/5 pt-4">
-            <h3 class="text-tss-600 font-black lg:text-xl text-base" >Since 1998</h3>
-            <h1 class="font-display lg:text-6xl text-5xl text-white">Your trusted textile sourcing and solutions partner</h1>
+            <!-- <h3 class="text-tss-600 font-black lg:text-xl text-base" >Since 1998</h3> -->
+            <h1 class="font-display lg:text-6xl text-5xl text-white">Taking fashion forward, since 1998</h1>
             <div class="lg:mt-8 mt-4">
-                <p class="text-gray-100 text-lg">
+                <p class="text-gray-200 text-xl font-body font-extrabold">
                     Headquartered in Bangalore TSS has been a leading ethical apparel and accessories sourcing solutions provider since 23 years.
                     <br/>
-                    TSS offers a 360 degree solution from designing, to developing, sourcing and logistics essential to build your brand. 
+                    <!-- TSS offers a 360 degree solution from designing, to developing, sourcing and logistics essential to build your brand.  -->
+                    At TSS, our goal is to lead our industry to a more Effectient, Sustainable and Ethical future
                 </p>
             </div>
             <div class="mt-7">
@@ -227,9 +228,51 @@
     </div>
 </div>
 
+
+<!-- ABOUT US -->
+<div id="about" class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6">
+    <div class="lg:grid lg:grid-flow-row lg:grid-cols-2">
+        <div class="col-span-1 my-auto" >
+            <div class="block" >
+            <p class="text-xl"  >About us</p>
+            <div class="w-7 h-1 bg-tss-600 mt-2"></div>
+            <h3 class="lg:text-5xl 2xl:text-6xl text-4xl font-display text-tss-accent mt-2" >From runway to wardrobe</h3>
+
+            <div class="mt-4 lg:text-lg 2xl:w-3/4 ">
+                <!-- <p>
+                    How <span class="text-tss-600 font-display">TSS</span> can help you service your customers:
+                </p>
+                <ul class="ml-3 mt-2 list-disc list-inside">
+                    <li> We research and isolate key, relevant trends on a frequent basis </li>
+                    <li> We Comp shop to understand strengths and weaknesses of the competition to identify areas of opportunity </li>
+                    <li> Acting as our clients Asia office, we create seasonal concept boards, fabric presentation and sample collection based on trend research as well as customer’s specific direction </li>
+                    <li> We ensure brand cohesiveness across categories for each customer </li>
+                    <li> We strengthen the business with our current customers by delivering monthly collections of newness to create excitement and keep them engaged </li>
+                    <li> We call this our ‘Magic Box’ & it consists of our latest works in fabric, apparel, scarves, handbags, home goods </li>
+                </ul> -->
+                <p>
+
+                </p>
+                <p class="mt-3">
+                    Passion for Detail, Transparency & Customer satisfaction are our key driving force behind the strong partnerships we built over the years.
+                </p>
+            </div>
+        </div>
+
+        </div>
+        <div class="col-span-1 my-auto">
+            <div class="flex lg:justify-start justify-center lg:mt-0 mt-4" >
+                <img class="relative lg:-right-32 h-96 lg:h-auto rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_600/v1633886133/tss/pexels-meruyert-gonullu-6034060.png" />
+                <img class="lg:h-auto h-80 rounded-md relative hidden lg:block lg:-left-64  lg:-bottom-10 border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_604/v1633961746/tss/pexels-dids-3754600.png" alt="BG"  />
+                                
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- CLIENT CAROUSEL -->
 <div class="py-3 bg-gray-100">
-    <h3 class="text-2xl text-center font-display text-gray-600"> Our International Clientele </h3>
+    <h3 class="text-2xl text-center font-display text-gray-600"> Our Clientele </h3>
     <div bind:this={brandScroller} style="scroll-behavior: smooth;" class="w-full overflow-x-hidden">
         <div class="flex flex-row space-x-6 mt-3">
             <img class="block" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />
@@ -246,42 +289,6 @@
         </div>
     </div>
 </div>
-
-<!-- ABOUT US -->
-<div id="about" class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6">
-    <div class="lg:grid lg:grid-flow-row lg:grid-cols-2">
-        <div class="col-span-1 my-auto" >
-            <div class="block" >
-            <p class="text-xl"  >Our Vision</p>
-            <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-            <h3 class="lg:text-5xl 2xl:text-6xl text-4xl font-display text-tss-accent mt-2" >Efficient, Sustainable and Ethical Future</h3>
-
-            <div class="mt-4 lg:text-lg 2xl:w-3/4 ">
-                <p>
-                    How <span class="text-tss-600 font-display">TSS</span> can help you service your customers:
-                </p>
-                <ul class="ml-3 mt-2 list-disc list-inside">
-                    <li> We research and isolate key, relevant trends on a frequent basis </li>
-                    <li> We Comp shop to understand strengths and weaknesses of the competition to identify areas of opportunity </li>
-                    <li> Acting as our clients Asia office, we create seasonal concept boards, fabric presentation and sample collection based on trend research as well as customer’s specific direction </li>
-                    <li> We ensure brand cohesiveness across categories for each customer </li>
-                    <li> We strengthen the business with our current customers by delivering monthly collections of newness to create excitement and keep them engaged </li>
-                    <li> We call this our ‘Magic Box’ & it consists of our latest works in fabric, apparel, scarves, handbags, home goods </li>
-                </ul>
-            </div>
-        </div>
-
-        </div>
-        <div class="col-span-1 my-auto">
-            <div class="flex lg:justify-start justify-center lg:mt-0 mt-4" >
-                <img class="relative lg:-right-32 h-96 lg:h-auto rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_600/v1633886133/tss/pexels-meruyert-gonullu-6034060.png" />
-                <img class="lg:h-auto h-80 rounded-md relative hidden lg:block lg:-left-64  lg:-bottom-10 border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_604/v1633961746/tss/pexels-dids-3754600.png" alt="BG"  />
-                                
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- OUR MISSION -->
 <div class="mission-bg bg-no-repeat bg-cover bg-center lg:bg-bottom" >
     <div class="2xl:px-36 lg:px-14 py-16 px-6" >
@@ -289,8 +296,11 @@
             Our Mission
         </h4>
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
-        <h3 class="lg:text-5xl text-4xl font-display text-tss-200 mt-4" > We are on a mission to leverage our experience, knowledge & network to help global & Indian retail brands build and grow their business in the Indian Sub-continent
+        <h3 class="lg:text-5xl text-4xl font-display text-gray-100 mt-4" >
+            It takes the best to service the best
         </h3>
+        <h4 class="lg:text-2xl text-xl text-gray-200 mt-4" > We are on a mission to leverage our experience, knowledge & network to help global & Indian retail brands build and grow their business in the Indian Sub-continent
+        </h4>
         <a href="#contact" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl lg:text-lg ring-2 hover:ring-4" >
             Reach out to us
             <svg class="fill-current text-white inline" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -347,13 +357,13 @@
 </div>
 
 <!-- CONTACT US -->
-<div id="contact" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200" >
-    <div class="lg:w-3/4" >
+<div id="contact" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200 grid grid-cols-4" >
+    <div class="col-span-3 " >
         <div>
             <h3 class="text-tss-accent lg:text-5xl text-4xl font-display mt-2" > Reach out to us </h3>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
             <p class="mt-3 lg:text-lg" >
-                Find out how TSS can help you. Fill the form and we'll reach out to you.
+                Find out how TSS can help your business grow. Fill the form and we'll reach out to you.
             </p>
         </div>
 
@@ -407,6 +417,25 @@
 
 
     </div>
+    <div class="col-span-1 my-auto" >
+        <p class="text-lg font-display text-gray-800" >Registered Address:</p>
+        <div class="mt-3 text-gray-700 my-auto" >
+            <p class="block" >
+                No . 2 , Hayes Road , Richmond Town
+                <br>
+                Bangalore - 560025
+                <br>
+                Karnataka
+                <br>
+                India
+            </p>
+        </div>
+        <div class="mt-3 text-tss-accent" >
+            <a href="tel:+918041121400" > +91 80 41121400 </a>
+            <br>
+            <a href="mailto:contact@tssindia.com" >contact@tssindia.com</a>
+        </div>
+    </div>
 </div>
 
 
@@ -422,7 +451,7 @@
         </nav>
         <!-- nav - end -->  
       <div class="text-gray-400 text-sm text-center py-8">
-        © 2021 - Present Textile Sourcing Solutions. All rights reserved.
+        © 2021 - Present Textile Sourcing Services. All rights reserved.
       </div>
     </footer>
   </div>
