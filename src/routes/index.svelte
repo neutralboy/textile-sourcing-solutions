@@ -1,9 +1,9 @@
 <svelte:head>
     <title>
-        Textile Sourcing Solutions | Your trusted textile sourcing and solutions partner
+        Textile Sourcing Services | Your trusted textile sourcing and solutions partner
     </title>
     <meta name="Description" content="Headquartered in Bangalore TSS has been a leading ethical apparel and accessories sourcing solutions provider since 23 years"  >
-    <meta property="og:title" content="Textile Sourcing Solutions | Your trusted textile sourcing and solutions partner" />
+    <meta property="og:title" content="Textile Sourcing Services | Your trusted textile sourcing and solutions partner" />
     <meta property="og:type" content="website" />
     <!-- <meta property="og:url" content="https://tss.com" /> -->
 </svelte:head>
@@ -14,7 +14,7 @@
             min-height: 85vh;
         }
         .mission-bg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/tss/WhatsApp_Image_2021-10-14_at_11.43.01.png);
+            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_2000/v1634226130/tss/agto-nugroho-1mnXGDl3iRY-unsplash.png);
         }
         /* .form-bg{
             background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto,w_1500/v1634055337/tss/pexels-anni-roenkae-2860807_16_9.png);
@@ -22,11 +22,11 @@
     }
     @media only screen and (max-width: 768px) {
         .mainBg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,h_800/v1634058073/tss/pexels-pixabay-236748_4_3.png);
+            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_800/v1634227214/tss/clark-street-mercantile-qnKhZJPKFD8-unsplash_4_3.png);
             min-height: 50vh;
         }
         .mission-bg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/q_auto/v1634058846/tss/pexels-los-muertos-crew-7205803_4_3.png);
+            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_800/v1634227098/tss/agto-nugroho-1mnXGDl3iRY-unsplash_4_3.png);
         }
         /* .form-bg{
             background-image: url(https://res.cloudinary.com/poorna/image/upload/q_auto/v1634055373/tss/pexels-anni-roenkae-2860807_4_3.png);
@@ -171,6 +171,9 @@
                 <a class="hover:text-tss-600" href="#services" >Services</a>
             </div>
             <div class="my-auto">
+                <a class="hover:text-tss-600" href="/products" >Products</a>
+            </div>
+            <div class="my-auto">
                 <a class="hover:text-tss-600" href="#about" >About</a>
             </div>
             <div class="my-auto">
@@ -196,20 +199,20 @@
         <a class="block" href="/" >Home</a>
         <a class="block" href="#about" >About</a>
         <a class="block" href="#services" >Services</a>
+        <a class="block" href="/products" >Products</a>
         <a class="block" href="#contact" >Contact</a>
     </div>
 
 </div>
 
 
-
 <div class="mainBg bg-no-repeat bg-cover p-0 m-0 bg-left">
-    <div class="2xl:px-56 2xl:py-28 lg:px-32 lg:py-14 px-6">
+    <div class="2xl:px-56 2xl:py-28 lg:px-32 lg:py-14 py-10 px-6">
         <div class="lg:mt-32 lg:w-3/5 pt-4">
             <!-- <h3 class="text-tss-600 font-black lg:text-xl text-base" >Since 1998</h3> -->
             <h1 class="font-display lg:text-6xl text-5xl text-white">Taking fashion forward, since 1998</h1>
             <div class="lg:mt-8 mt-4">
-                <p class="text-gray-200 text-xl font-body font-extrabold">
+                <p class="text-gray-200 lg:text-xl font-body font-extrabold">
                     Headquartered in Bangalore TSS has been a leading ethical apparel and accessories sourcing solutions provider since 23 years.
                     <br/>
                     <!-- TSS offers a 360 degree solution from designing, to developing, sourcing and logistics essential to build your brand.  -->
@@ -231,8 +234,8 @@
 
 <!-- ABOUT US -->
 <div id="about" class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6">
-    <div class="lg:grid lg:grid-flow-row lg:grid-cols-2">
-        <div class="col-span-1 my-auto" >
+    <div class="lg:grid lg:grid-flow-row lg:grid-cols-6">
+        <div class="col-span-2 my-auto" >
             <div class="block" >
             <p class="text-xl"  >About us</p>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
@@ -260,10 +263,10 @@
         </div>
 
         </div>
-        <div class="col-span-1 my-auto">
-            <div class="flex lg:justify-start justify-center lg:mt-0 mt-4" >
-                <img class="relative lg:-right-32 h-96 lg:h-auto rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_600/v1633886133/tss/pexels-meruyert-gonullu-6034060.png" />
-                <img class="lg:h-auto h-80 rounded-md relative hidden lg:block lg:-left-64  lg:-bottom-10 border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_604/v1633961746/tss/pexels-dids-3754600.png" alt="BG"  />
+        <div class="col-span-4 my-auto">
+            <div class="flex lg:justify-end justify-center lg:mt-0 mt-4" >
+                <img class="relative xl:h-80 h-56 lg:-right-52 rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634224235/tss/pexels-ksenia-chernaya-3965545.png" />
+                <img class="rounded-md relative hidden lg:block   lg:-bottom-10 border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_400/v1634223956/tss/pexels-ron-lach-9849320.png" alt="BG"  />
                                 
             </div>
         </div>
@@ -290,13 +293,13 @@
     </div>
 </div>
 <!-- OUR MISSION -->
-<div class="mission-bg bg-no-repeat bg-cover bg-center lg:bg-bottom" >
+<div class="mission-bg bg-no-repeat bg-cover bg-bottom" >
     <div class="2xl:px-36 lg:px-14 py-16 px-6" >
         <h4 class="lg:text-3xl text-xl text-gray-200" >
             Our Mission
         </h4>
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
-        <h3 class="lg:text-5xl text-4xl font-display text-gray-100 mt-4" >
+        <h3 class="lg:text-5xl text-4xl font-display text-white mt-4" >
             It takes the best to service the best
         </h3>
         <h4 class="lg:text-2xl text-xl text-gray-200 mt-4" > We are on a mission to leverage our experience, knowledge & network to help global & Indian retail brands build and grow their business in the Indian Sub-continent
@@ -340,10 +343,14 @@
     </div>
 </div>
 
+<div class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6" >
+
+</div>
+
 <!-- PARTNER LOCATIONS -->
 <div class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6" >
-    <div>
-        <div class="lg:w-3/4" >
+    <div class="grid grid-cols-2" >
+        <div class="col-span-1" >
             <h3 class="lg:text-5xl text-4xl font-display text-gray-800" >Partner locations</h3>
             <div class="w-7 h-1 bg-tss-accent mt-2"></div>
             <div class="mt-6 lg:text-lg">
@@ -351,7 +358,9 @@
                     Work with our partners all over the Indian Subcontinent to get the best in quality products that speak for your brand.
                 </p>
             </div>
-            <div class="lg:mt-10" style="height: 500px" id="chartdiv" ></div>
+        </div>
+        <div class="col-span-1" >
+            <div class="lg:mt-10 h-80" id="chartdiv" ></div>
         </div>
     </div>
 </div>
