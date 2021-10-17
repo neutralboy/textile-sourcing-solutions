@@ -154,9 +154,46 @@
         }
     ];
 
+    const products = [
+        {
+            name: "Men's wear",
+            content: "Shirts, Jackets & Bottoms",
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634407403/tss/pexels-anna-tis-7006753.png"
+        },
+        {
+            name: "Women's wear",
+            content: "Tops, Skirts, Dresses, Bottoms & Jackets",
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634454479/tss/pexels-ron-lach-8386652.png"
+        },
+        {
+            name: "Kids's wear",
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455077/tss/pexels-polina-tankilevitch-3875080.png"
+        },
+        {
+            name: "Knits",
+            content: "Tee, Polo, Sweatshirt & Outerwear",
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455467/tss/mediamodifier-kJXGTOY1wLQ-unsplash.png"
+        },
+        {
+            name: "Leather",
+            content: "Apparel & Small Leather Goods",
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455598/tss/robbie-noble-ruNmAlLLnpo-unsplash.png"
+        },
+        {
+            name: "Accessories",
+            content: "Scarves, Jewellery, Bags & Belts",
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455766/tss/trinh-minh-th-ScYGyGhA9HQ-unsplash.png"
+        },
+        {
+            name: "Home",
+            content: "Towels, Bedsheets & Cushion Covers",
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455896/tss/sven-mieke-BB3dR-N5Npg-unsplash.png"
+        }
+    ];
+
 </script>
 
-
+<!-- DESKTOP NAV -->
 <div class="hidden lg:flex justify-center">
     <div class="flex justify-between py-4 pl-4 pr-10 shadow-2xl bg-white rounded absolute top-4 w-11/12">
         <div class="flex">
@@ -171,7 +208,7 @@
                 <a class="hover:text-tss-600" href="#services" >Services</a>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="/products" >Products</a>
+                <a class="hover:text-tss-600" href="#products" >Products</a>
             </div>
             <div class="my-auto">
                 <a class="hover:text-tss-600" href="#about" >About</a>
@@ -183,6 +220,7 @@
     </div>
 </div>
 
+<!-- MOBILE NAV -->
 <div class="lg:hidden sticky top-0 shadow-md w-full z-50 bg-tss-200 h-14">
     <div class="flex justify-between p-2" >
         <div class="flex justify-start">
@@ -199,7 +237,7 @@
         <a class="block" href="/" >Home</a>
         <a class="block" href="#about" >About</a>
         <a class="block" href="#services" >Services</a>
-        <a class="block" href="/products" >Products</a>
+        <a class="block" href="#products" >Products</a>
         <a class="block" href="#contact" >Contact</a>
     </div>
 
@@ -343,13 +381,35 @@
     </div>
 </div>
 
-<div class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6" >
+<!-- PRODUCTS -->
+<div id="products" class="bg-tss-600" >
+    <div class="2xl:px-44 lg:px-14 lg:pt-20 pt-8 pb-2 px-6 " >
+        <h3 class="text-5xl text-white font-display" >Products and Apparels</h3>    
+        <div class="w-7 h-1 bg-tss-accent mt-2"></div>
+    </div>
 
+    <div class="mt-4 grid lg:grid-cols-4 grid-cols-2" >
+        {#each products as { name, bg, content} }
+            <div  class="col-span-1 px-4 py-6 bg-center bg-cover h-64 shadow-sm font-black " style={`background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${bg});`}>
+                <p class="inline-block text-3xl text-white" > 
+                    {name}
+                    <svg class="fill-current inline" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11H2V13H18.17Z"></path>
+                    </svg>                
+                </p>
+                {#if content}
+                    <p class="text-white text-xl mt-3" > {content} </p>
+                {/if}
+            </div>
+        {/each}
+    </div>
 </div>
 
+
 <!-- PARTNER LOCATIONS -->
+
 <div class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6" >
-    <div class="grid grid-cols-2" >
+    <div class="lg:grid lg:grid-cols-2" >
         <div class="col-span-1" >
             <h3 class="lg:text-5xl text-4xl font-display text-gray-800" >Partner locations</h3>
             <div class="w-7 h-1 bg-tss-accent mt-2"></div>
@@ -365,9 +425,10 @@
     </div>
 </div>
 
+
 <!-- CONTACT US -->
-<div id="contact" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200 grid grid-cols-4" >
-    <div class="col-span-3 " >
+<div id="contact" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200 lg:grid lg:grid-cols-4" >
+    <div class="lg:col-span-3 " >
         <div>
             <h3 class="text-tss-accent lg:text-5xl text-4xl font-display mt-2" > Reach out to us </h3>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
@@ -426,7 +487,7 @@
 
 
     </div>
-    <div class="col-span-1 my-auto" >
+    <div class="lg:col-span-1 my-auto lg:mt-0 mt-6" >
         <p class="text-lg font-display text-gray-800" >Registered Address:</p>
         <div class="mt-3 text-gray-700 my-auto" >
             <p class="block" >
