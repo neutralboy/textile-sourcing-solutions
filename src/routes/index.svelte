@@ -262,13 +262,16 @@
                 <a class="hover:text-tss-600" href="/" >Home</a>
             </div>
             <div class="my-auto">
+                <a class="hover:text-tss-600" href="#services" >About</a>
+            </div>
+            <div class="my-auto">
+                <a class="hover:text-tss-600" href="#mission" >Mission</a>
+            </div>
+            <div class="my-auto">
                 <a class="hover:text-tss-600" href="#services" >Services</a>
             </div>
             <div class="my-auto">
                 <a class="hover:text-tss-600" href="#products" >Products</a>
-            </div>
-            <div class="my-auto">
-                <a class="hover:text-tss-600" href="#about" >About</a>
             </div>
             <div class="my-auto">
                 <a class="hover:text-tss-600" href="#contact" >Contact</a>
@@ -293,6 +296,7 @@
     <div on:click={toggleNav} class="{navOpen ? 'bg-white px-2 py-2 flex flex-col text-lg space-y-2 shadow-md' : 'hidden'}" >
         <a class="block" href="/" >Home</a>
         <a class="block" href="#about" >About</a>
+        <a class="block" href="#mission" >Mission</a>
         <a class="block" href="#services" >Services</a>
         <a class="block" href="#products" >Products</a>
         <a class="block" href="#contact" >Contact</a>
