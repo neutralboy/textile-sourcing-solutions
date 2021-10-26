@@ -5,33 +5,44 @@
     <meta name="Description" content="Headquartered in Bangalore TSS has been a leading ethical apparel and accessories sourcing solutions provider since 23 years"  >
     <meta property="og:title" content="Textile Sourcing Services | Your trusted textile sourcing and solutions partner" />
     <meta property="og:type" content="website" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <!-- <meta property="og:url" content="https://tss.com" /> -->
 </svelte:head>
-
 <style>
     @media only screen and (min-width: 992px) {
-        /* .mainBg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_2000/tss/clark-street-mercantile-qnKhZJPKFD8-unsplash.png);
-            min-height: 85vh;
-        } */
         .mission-bg{
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://res.cloudinary.com/poorna/image/upload/v1634742717/tss/WhatsApp_Image_2021-10-14_at_11.43.01.png);
+            height: 70vh;
+            overflow: hidden;
+            position: relative;
         }
-        /* .form-bg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto,w_1500/v1634055337/tss/pexels-anni-roenkae-2860807_16_9.png);
-        } */
+        .video_ctn{  
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
     }
     @media only screen and (max-width: 768px) {
-        /* .mainBg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_800/v1634227214/tss/clark-street-mercantile-qnKhZJPKFD8-unsplash_4_3.png);
-            min-height: 50vh;
-        } */
         .mission-bg{
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://res.cloudinary.com/poorna/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1634742717/tss/WhatsApp_Image_2021-10-14_at_11.43.01.png);
+            height: 110vh;
+            overflow: hidden;
+            position: relative;
         }
-        /* .form-bg{
-            background-image: url(https://res.cloudinary.com/poorna/image/upload/q_auto/v1634055373/tss/pexels-anni-roenkae-2860807_4_3.png);
-        } */
+        .video_ctn{  
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
     } 
 </style>
 <script context="module" >
@@ -39,6 +50,10 @@
 </script>
 <script>
     import {onMount} from "svelte";
+    import FadeInText from "../modules/FadeInText.svelte";
+
+    let Carousel;
+    let carousel;
 
     let moreWindowOpen = false;
     let navOpen = false;
@@ -54,38 +69,22 @@
     };
 
     let brands = [
-        `<img class="block" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />`,
-           ` <img class="block w-36" src="https://res.cloudinary.com/poorna/image/upload/v1633870707/tss/superdry.png" alt="Superdry" />`,
-           ` <img alt="American Eagle" class="block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/American-Eagle-Logo-1985.png" />`,
-            `<img alt="Hollister" class="block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Hollister-symbol.png" />`,
-            `<img alt="Ralph Lauren" class="block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />`,
-            `<img alt="Champion" class="block h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/tss/Champion-logo.png" />`,
-            `<img alt="Liliy Pulitzer" class="block h-16 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633871690/tss/lilly-pulitzer-logo_0.png" />`,
-            `<img alt="Easter Mountain Sports" class="block my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_80/v1633870854/tss/eastern-mountain-sports-logo-05F9379E20-seeklogo.com.png" />`,
-            `<img alt="Amazon" class="block my-auto h-14" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870945/tss/amazon-logo-transparent.png" />`,
-            `<img alt="Pantaloons" class="block my-auto h-14" src="https://res.cloudinary.com/poorna/image/upload/v1633871039/tss/Pantaloons-Gift-Voucher-SDL026711860-1-90e34.png" />`,
-            `<img alt="Being Human" class="block my-auto h-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_150/v1633871111/tss/41YTcyA8eeL.png" />`
-    ]
+        `<img class="block mx-3" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />`,
+           ` <img class="block mx-3 w-36" src="https://res.cloudinary.com/poorna/image/upload/v1633870707/tss/superdry.png" alt="Superdry" />`,
+           ` <img alt="American Eagle" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/American-Eagle-Logo-1985.png" />`,
+            `<img alt="Hollister" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Hollister-symbol.png" />`,
+            `<img alt="Ralph Lauren" class="block mx-3 h-20 w-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />`,
+            `<img alt="Champion" class="block mx-3 h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/tss/Champion-logo.png" />`,
+            `<img alt="Liliy Pulitzer" class="block mx-3 h-16 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633871690/tss/lilly-pulitzer-logo_0.png" />`,
+            `<img alt="Easter Mountain Sports" class="block mx-3 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_80/v1633870854/tss/eastern-mountain-sports-logo-05F9379E20-seeklogo.com.png" />`,
+            `<img alt="Amazon" class="block mx-3 my-auto h-14" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870945/tss/amazon-logo-transparent.png" />`,
+            `<img alt="Pantaloons" class="block mx-3 my-auto w-32" src="https://res.cloudinary.com/poorna/image/upload/v1633871039/tss/Pantaloons-Gift-Voucher-SDL026711860-1-90e34.png" />`,
+            `<img alt="Being Human" class="block mx-3 my-auto h-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_150/v1633871111/tss/41YTcyA8eeL.png" />`
+    ];
 
-    let brandScroller;
     onMount(async ()=>{
-        const totalScrollable = brandScroller.scrollWidth;
-        const screenWidth = screen.width;
-        const difference = totalScrollable - screenWidth;
-        const iterWidth = 6;
-        let iterCount = 0;
-        const totalIterParts = Math.floor(difference/iterWidth) - 1 ;
-        if(totalScrollable > screenWidth){
-            await setInterval(()=>{
-                brandScroller.scrollTo({ left: iterWidth*iterCount });
-                if(iterCount === (totalIterParts+2)){
-                    iterCount = 0;
-                }else{
-                    iterCount += 1;
-                }
-            }, 100);
-        };
-
+        const module = await import('svelte-carousel');
+        Carousel = module.default;
         await import("../modules/maps");
     });
 
@@ -123,7 +122,7 @@
         },
         {
             name: "Costing",
-            tagline: "Efficient Sourcing , Re-engineering & Negotiation for Success",
+            tagline: "Efficient Sourcing & Negotiation for Success",
             image: `<svg class="inline-block fill-current text-gray-600" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.5 21.5C5.95411 21.4935 4.59326 20.4795 4.145 19H2V17H4.145C4.6599 15.273 6.40204 14.2192 8.1707 14.565C9.93936 14.9108 11.1563 16.5431 10.9828 18.3369C10.8094 20.1307 9.30215 21.4995 7.5 21.5ZM7.5 16.5C6.67157 16.5 6 17.1716 6 18C6 18.8284 6.67157 19.5 7.5 19.5C8.32843 19.5 9 18.8284 9 18C9 17.1716 8.32843 16.5 7.5 16.5ZM22 19H12V17H22V19ZM16.5 15.5C14.6979 15.4995 13.1906 14.1307 13.0172 12.3369C12.8437 10.5431 14.0606 8.91084 15.8293 8.56503C17.598 8.21923 19.3401 9.27297 19.855 11H22V13H19.855C19.4067 14.4795 18.0459 15.4935 16.5 15.5ZM16.5 10.5C15.6716 10.5 15 11.1716 15 12C15 12.8284 15.6716 13.5 16.5 13.5C17.3284 13.5 18 12.8284 18 12C18 11.1716 17.3284 10.5 16.5 10.5ZM12 13H2V11H12V13ZM9.5 9.49999C7.69785 9.49953 6.19063 8.1307 6.01715 6.33692C5.84367 4.54314 7.06064 2.91084 8.8293 2.56503C10.598 2.21923 12.3401 3.27297 12.855 4.99999H22V6.99999H12.855C12.4065 8.47928 11.0458 9.4932 9.5 9.49999ZM9.5 4.49999C8.68198 4.5011 8.01568 5.15742 8.00223 5.97534C7.98878 6.79325 8.63315 7.47112 9.45069 7.49911C10.2682 7.52711 10.9575 6.89491 11 6.07799V6.36799V5.99999C11 5.17157 10.3284 4.49999 9.5 4.49999ZM5 6.99999H2V4.99999H5V6.99999Z" fill="#2E3A59"></path>
                     </svg>
@@ -262,7 +261,7 @@
                 <a class="hover:text-tss-600" href="/" >Home</a>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="#services" >About</a>
+                <a class="hover:text-tss-600" href="#about" >About</a>
             </div>
             <div class="my-auto">
                 <a class="hover:text-tss-600" href="#mission" >Mission</a>
@@ -304,11 +303,9 @@
 
 </div>
 
-
-<div class="flex justify-center" >
+<div class="flex justify-center animate__animated animate__fadeIn" >
     <img alt="Main" src="https://res.cloudinary.com/poorna/image/upload/v1635169034/tss/office_tss.png" />
 </div>
-
 
 <!-- ABOUT US -->
 <div id="about" class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6">
@@ -317,31 +314,27 @@
             <div class="block" >
             <p class="text-xl"  >About us</p>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-            <h3 class="lg:text-5xl 2xl:text-6xl text-4xl font-display text-tss-accent mt-2" >Fit for the very Best</h3>
+            <h3 class="lg:text-4xl 2xl:text-6xl text-4xl font-display text-tss-accent mt-2" >Fit for the very Best</h3>
 
-            <div class="mt-4 lg:text-base 2xl:w-3/4 ">
-                <!-- <p>
-                    How <span class="text-tss-600 font-display">TSS</span> can help you service your customers:
-                </p>
-                <ul class="ml-3 mt-2 list-disc list-inside">
-                    <li> We research and isolate key, relevant trends on a frequent basis </li>
-                    <li> We Comp shop to understand strengths and weaknesses of the competition to identify areas of opportunity </li>
-                    <li> Acting as our clients Asia office, we create seasonal concept boards, fabric presentation and sample collection based on trend research as well as customer’s specific direction </li>
-                    <li> We ensure brand cohesiveness across categories for each customer </li>
-                    <li> We strengthen the business with our current customers by delivering monthly collections of newness to create excitement and keep them engaged </li>
-                    <li> We call this our ‘Magic Box’ & it consists of our latest works in fabric, apparel, scarves, handbags, home goods </li>
-                </ul> -->
-                <p>
-                    Headquartered in Bangalore, TSS started way back in 1998 when we made sourcing from Southeast Asia
-                    more efficient by providing Fast Cost, Friendly &amp; Flexible Service Tailored to individual client needs.
+            <div class="mt-4 lg:text-base 2xl:w-3/4">
+                <p class="" >
+                    <FadeInText text={`Headquartered in Bangalore, TSS started way back in 1998 when we made sourcing from Southeast Asia
+                        more efficient by providing Fast Cost, Friendly &amp; Flexible Service Tailored to individual client needs.`} />
                 </p>
                 <p class="mt-3">
-                    Today we run a powerhouse, that services some of the most respected &amp; culturally significant brands in
-                    the world doing everything we can to ensure their presence reaches every corner of the globe.
+                    <FadeInText
+                        text={`Today we run a powerhouse, that services some of the most respected &amp; culturally significant brands in
+                            the world doing everything we can to ensure their presence reaches every corner of the globe.`}
+                        className="animate__fadeInRight"
+                    />
+                    
                 </p>
                 <p class="mt-3" >
-                    We have supported iconic Brands like Abercrombie &amp; Fitch, American Eagle, Ralph Lauren, Super Dry
-                            build &amp; grow their business in Indian Sub-continent by ethical &amp; sustainable sourcing.
+                    <FadeInText
+                        text={`We have supported iconic Brands like Abercrombie & Fitch, American Eagle, Ralph Lauren, Super Dry
+                            build & grow their business in Indian Sub-continent by ethical & sustainable sourcing.`}
+                    />
+                    
                 </p>
             </div>
         </div>
@@ -358,32 +351,36 @@
 </div>
 
 <!-- OUR MISSION -->
-<div id="mission" class="mission-bg bg-no-repeat bg-cover bg-bottom" >
+<div id="mission" class="mission-bg bg-gray-900 bg-opacity-50" >
+    <video autoplay loop muted class="video_ctn" >
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,q_auto,vc_auto,w_2000/v1635269236/tss/pexels-karolina-grabowska-5743177.mp4" type="video/mp4" >
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,q_auto,vc_auto,w_2000/v1635269236/tss/pexels-karolina-grabowska-5743177.webm" type="video/webm" />
+    </video>
     <div class="2xl:px-36 lg:px-14 py-16 px-6" >
         <h4 class="lg:text-3xl text-xl text-gray-200" >
             Our Mission
         </h4>
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
-        <h3 class="lg:text-5xl text-2xl font-display text-white mt-4" >
+        <h3 class="lg:text-4xl text-2xl font-display text-white mt-4" >
             It takes the best to service the best
         </h3>
         <div class="mt-4 text-gray-200" >
             <p>
-                We are on a mission to leverage our Experience, Knowledge &amp; Network to help Global &amp; India retail
-                brands build &amp; grow their business in Indian Sub-continent.
+                <FadeInText text={`We are on a mission to leverage our Experience, Knowledge & Network to help Global &amp; India retail
+                    brands build & grow their business in Indian Sub-continent.`} className="animate__slideInUp" />
             </p>
             <p class="mt-3">
-                Our ability to anticipate future challenges &amp; respond effectively to changing market demands is our core strength
-                    that we offer to both our Vendor &amp; Customer partners to build a Sustainable, Trustworthy &amp; Valuable business.
+                <FadeInText text={`Our ability to anticipate future challenges & respond effectively to changing market demands is our core strength
+                    that we offer to both our Vendor &amp; Customer partners to build a Sustainable, Trustworthy & Valuable business.`} className="animate__slideInUp" />
             </p>
             <p class="mt-3">
-                Passion for detail, Transparency &amp; customer satisfaction are our key driving force behind our strong
-                partnerships we built over the years.
+                <FadeInText text={`Passion for detail, Transparency & customer satisfaction are our key driving force behind our strong
+                    partnerships we built over the years.`} className="animate__slideInUp" />
             </p>
             <p class="mt-3">
-                When it comes to servicing some of the best &amp; biggest brands in the world, we ensure our design team
-                is on par with the best in the international industry. Our team brings real insight into current trends with
-                their expertise in on ground sourcing so that our customers are empowered to bring their ideas to life.
+                <FadeInText text={`When it comes to servicing some of the best &amp; biggest brands in the world, we ensure our design team
+                    is on par with the best in the international industry. Our team brings real insight into current trends with
+                    their expertise in on ground sourcing so that our customers are empowered to bring their ideas to life.`} className="animate__slideInUp" />
             </p>
         </div>
         <a href="#contact" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl lg:text-lg ring-2 hover:ring-4" >
@@ -395,16 +392,15 @@
     </div>
 </div>
 
-
 <!-- CLIENT CAROUSEL -->
 <div class="py-3 bg-gray-100">
     <h3 class="text-2xl text-center font-display text-gray-600"> Our Clientele </h3>
-    <div bind:this={brandScroller} style="scroll-behavior: smooth;" class="w-full overflow-x-hidden">
-        <div class="flex flex-row space-x-6 mt-3">
+    <div>
+        <svelte:component this={Carousel} bind:this={carousel} arrows={false} autoplay={true} dots={false} particlesToShow={8} autoplayDuration={200} >
             {#each brands as brand}
                 {@html brand}
             {/each}
-        </div>
+        </svelte:component>
     </div>
 </div>
 
@@ -413,25 +409,27 @@
     <div>
         <h4 class="text-xl text-gray-200" >Our Services</h4>
         <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-        <h1 class="lg:text-5xl text-4xl font-display text-white mt-3" > We provide 360-degree solution to our business partners </h1>
+        <h1 class="lg:text-4xl text-4xl font-display text-white mt-3" > We provide 360-degree solution to our business partners </h1>
     </div>
-    <div class="grid grid-flow-row lg:grid-cols-3 grid-cols-2 mt-10 lg:grid-rows-3" >
+    <div class="grid grid-flow-row lg:grid-cols-3 grid-cols-2 mt-4 lg:grid-rows-3" >
         
         {#each services as {name, image, tagline, desc}, s}
 
-        <div class="col-span-1 lg:mx-3 m-1 my-4 block">
+        <div class="col-span-1 lg:mx-1 m-1 my-3 block">
             <div class="bg-tss-200 shadow-md pb-3 h-full" >
-                <div class="py-6 px-4  flex flex-col justify-between h-full" >
-                    <div class="flex justify-center" >
-                        <div class="text-center rounded-full bg-gray-200 inline-block p-6 my-auto" >
+                <div class=" px-1 flex flex-col justify-between h-full" >
+                    <div class="lg:flex lg:flex-row lg:justify-around lg:my-auto mx-auto lg:mx-0" >
+                        <div class="text-center rounded-full bg-gray-200 inline-block p-4 lg:my-auto mx-auto lg:mx-0 mt-2" >
                             {@html image}
+                        </div>
+                        <div class="lg:my-auto mt-3" >
+                            <h4 class="text-lg text-center text-green-800 font-display font-light lg:my-auto"> 
+                                {name}
+                            </h4>
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-xl text-center text-green-800 font-display font-light mb-0"> 
-                            {name}
-                        </h4>
-                        <p class="mt-4 text-center" >{tagline || ""}</p>
+                        <p class="my-2 text-center" >{tagline || ""}</p>
                     </div>
                 </div>
                 {#if desc }
@@ -451,36 +449,36 @@
 <!-- PRODUCTS -->
 <div id="products" class="bg-tss-600" >
     <div class="2xl:px-44 lg:px-14 lg:pt-20 pt-8 pb-2 px-6 " >
-        <h3 class="text-5xl text-white font-display" >Products and Apparels</h3>    
+        <h3 class="text-4xl text-white font-display" >Products and Apparels</h3>    
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
+
+        <div class="mt-4 grid lg:grid-cols-4 grid-cols-2" >
+            {#each products as { name, bg, content} }
+                <div class="bg-white rounded-md m-1 flex flex-col" >
+                    <div>
+                        <img class="lg:h-56 h-36 block mx-auto" alt={name} src={bg} />
+                    </div>
+                    <div class="text-center my-auto py-2" >
+                        <h4 class="text-2xl block mx-auto font-display" >{name}</h4>
+                        {#if content }
+                            <p class="text-gray-700 mt-2" > {content} </p>
+                        {/if}
+
+                    </div>
+                </div>
+            {/each}
+        </div>
+
     </div>
 
-    <div class="mt-4 grid lg:grid-cols-4 grid-cols-2" >
-        {#each products as { name, bg, content} }
-            <div class="col-span-1 px-4 py-6 bg-center h-64 shadow-sm font-black bg-cover" style={`background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${bg});`}>
-                <p class="inline-block text-3xl text-white" > 
-                    {name}
-                    <svg class="fill-current inline" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11H2V13H18.17Z"></path>
-                    </svg>                
-                </p>
-                {#if content}
-                    <p class="text-white text-xl mt-3" > 
-                        {content}
-                    </p>
-                {/if}
-            </div>
-        {/each}
-    </div>
+
 </div>
 
-
 <!-- PARTNER LOCATIONS -->
-
 <div class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6" >
-    <div class="lg:grid lg:grid-cols-2" >
-        <div class="col-span-1" >
-            <h3 class="lg:text-5xl text-4xl font-display text-gray-800" >Partner locations</h3>
+    <div >
+        <div >
+            <h3 class="lg:text-4xl text-4xl font-display text-gray-800" >Partner locations</h3>
             <div class="w-7 h-1 bg-tss-accent mt-2"></div>
             <div class="mt-6 lg:text-lg">
                 <p>
@@ -488,18 +486,17 @@
                 </p>
             </div>
         </div>
-        <div class="col-span-1" >
-            <div class="lg:mt-10 h-80" id="chartdiv" ></div>
+        <div >
+            <div class="lg:mt-10 h-96" id="chartdiv" ></div>
         </div>
     </div>
 </div>
-
 
 <!-- CONTACT US -->
 <div id="contact" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200 lg:grid lg:grid-cols-4" >
     <div class="lg:col-span-3 " >
         <div>
-            <h3 class="text-tss-accent lg:text-5xl text-4xl font-display mt-2" > Reach out to us </h3>
+            <h3 class="text-tss-accent lg:text-4xl text-4xl font-display mt-2" > Reach out to us </h3>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
             <p class="mt-3 lg:text-lg" >
                 Find out how TSS can help your business grow. Fill the form and we'll reach out to you.
@@ -593,7 +590,7 @@
     </footer>
 </div>
 
-<!-- KNOW MORE WINDOE -->
+<!-- KNOW MORE WINDOW -->
 <div class={`antialiased fixed z-50 top-0 left-0 right-0 bottom-0 ${ moreWindowOpen ? "flex" : "hidden" } `} >
     <div class="bg-gray-800 opacity-60 overflow-hidden min-h-screen min-w-full top-0 left-0 right-0 bottom-0 absolute"></div>
     <button on:click={toggleMoreWindow} class="absolute right-3 top-3 hidden lg:block">
