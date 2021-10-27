@@ -246,8 +246,8 @@
 </script>
 
 <!-- DESKTOP NAV -->
-<div class="hidden lg:flex justify-center sticky ">
-    <div class="flex justify-between py-4 pl-4 pr-10 shadow-2xl bg-white rounded sticky w-full">
+<nav class="hidden lg:flex justify-center sticky top-0 bg-white z-50">
+    <div class="flex justify-between py-4 pl-4 pr-10 shadow-md bg-white rounded sticky w-full">
         <div class="flex">
             <img height="100" width="100" class="block h-16 w-16" src="/favicon.png" alt="TSS Logo" />
             <div class="my-auto" >
@@ -277,7 +277,7 @@
             </div>
         </div>
     </div>
-</div>
+</nav>
 
 <!-- MOBILE NAV -->
 <div class="lg:hidden sticky top-0 shadow-md w-full z-50 bg-tss-200 h-14">
@@ -396,7 +396,7 @@
 <div class="py-3 bg-gray-100">
     <h3 class="text-2xl text-center font-display text-gray-600"> Our Clientele </h3>
     <div>
-        <svelte:component this={Carousel} bind:this={carousel} arrows={false} autoplay={true} dots={false} particlesToShow={8} autoplayDuration={200} >
+        <svelte:component this={Carousel} bind:this={carousel} arrows={false} autoplay={true} dots={false} particlesToShow={8} autoplayDuration={15} >
             {#each brands as brand}
                 {@html brand}
             {/each}
@@ -419,17 +419,17 @@
             <div class="bg-tss-200 shadow-md pb-3 h-full" >
                 <div class=" px-1 flex flex-col justify-between h-full" >
                     <div class="lg:flex lg:flex-row lg:justify-around lg:my-auto mx-auto lg:mx-0" >
-                        <div class="text-center rounded-full bg-gray-200 inline-block p-4 lg:my-auto mx-auto lg:mx-0 mt-2" >
+                        <div class="text-center rounded-full bg-gray-200 inline-block p-3 lg:my-auto mx-auto lg:mx-0 mt-2" >
                             {@html image}
                         </div>
-                        <div class="lg:my-auto mt-3" >
+                        <div class="lg:my-auto mt-2" >
                             <h4 class="text-lg text-center text-green-800 font-display font-light lg:my-auto"> 
                                 {name}
                             </h4>
                         </div>
                     </div>
                     <div>
-                        <p class="my-2 text-center" >{tagline || ""}</p>
+                        <p class="my-1 text-center" >{tagline || ""}</p>
                     </div>
                 </div>
                 {#if desc }
@@ -487,7 +487,7 @@
             </div>
         </div>
         <div >
-            <div class="lg:mt-10 h-96" id="chartdiv" ></div>
+            <div class="lg:mt-10" style="height: 70vh;" id="chartdiv" ></div>
         </div>
     </div>
 </div>

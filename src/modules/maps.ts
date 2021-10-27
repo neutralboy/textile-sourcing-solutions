@@ -94,7 +94,7 @@ originImageTemplate.tooltipText = "{title}";
 originImageTemplate.setStateOnChildren = true;
 originImageTemplate.states.create("hover");
 
-originImageTemplate.horizontalCenter = "middle";
+originImageTemplate.horizontalCenter = "right";
 originImageTemplate.verticalCenter = "middle";
 
 const originHitCircle = originImageTemplate.createChild(am4core.Circle);
@@ -105,7 +105,7 @@ const originTargetIcon = originImageTemplate.createChild(am4core.Sprite);
 originTargetIcon.fill = interfaceColors.getFor("alternativeBackground");
 originTargetIcon.strokeWidth = 0;
 originTargetIcon.scale = 1.3;
-originTargetIcon.horizontalCenter = "middle";
+originTargetIcon.horizontalCenter = "right";
 originTargetIcon.verticalCenter = "middle";
 originTargetIcon.path = targetSVG;
 

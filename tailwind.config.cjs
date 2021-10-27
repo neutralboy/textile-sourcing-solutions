@@ -6,7 +6,7 @@ const config = {
 	theme: {
 		fontFamily: {
 			body: ['Open Sans', 'sans-serif'],
-			display: ['Oswald', 'sans-serif']
+			display: ['Architects Daughter', 'cursive']
 		},
 		extend: {
 			colors: {
