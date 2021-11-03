@@ -27,6 +27,26 @@
             z-index: -1;
             object-fit: cover;
         }
+
+        .services-bg{
+            /* height: 70vh; */
+            overflow: hidden;
+            position: relative;
+        }
+        .video-service-ctn{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .fullscreen-70{
+            height: 70vh;
+        }
+
     }
     @media only screen and (max-width: 768px) {
         .mission-bg{
@@ -43,6 +63,24 @@
             z-index: -1;
             object-fit: cover;
         }
+
+
+        .services-bg{
+            /* height: 70vh; */
+            overflow: hidden;
+            position: relative;
+        }
+        .video-service-ctn{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+
     } 
 </style>
 <script context="module" >
@@ -69,23 +107,26 @@
     };
 
     let brands = [
-        `<img class="block mx-3" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />`,
-           ` <img class="block mx-3 w-36" src="https://res.cloudinary.com/poorna/image/upload/v1633870707/tss/superdry.png" alt="Superdry" />`,
-           ` <img alt="American Eagle" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/American-Eagle-Logo-1985.png" />`,
+            `<img class="block mx-3" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />`,
+            `<img alt="Ralph Lauren" class="block mx-3 h-20" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />`,
             `<img alt="Hollister" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Hollister-symbol.png" />`,
-            `<img alt="Ralph Lauren" class="block mx-3 h-20 w-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />`,
-            `<img alt="Champion" class="block mx-3 h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/tss/Champion-logo.png" />`,
-            `<img alt="Liliy Pulitzer" class="block mx-3 h-16 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633871690/tss/lilly-pulitzer-logo_0.png" />`,
-            `<img alt="Easter Mountain Sports" class="block mx-3 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_80/v1633870854/tss/eastern-mountain-sports-logo-05F9379E20-seeklogo.com.png" />`,
+            ` <img alt="American Eagle" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/American-Eagle-Logo-1985.png" />`,
+            `<img class="block mx-3 w-32 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_200/v1635942435/tss/877cbd5d8ca8d415a541f9274fcd0ea2.png" alt="Chubbies" />`,
+           ` <img class="block mx-3 w-36" src="https://res.cloudinary.com/poorna/image/upload/v1633870707/tss/superdry.png" alt="Superdry" />`,
+           `<img alt="Easter Mountain Sports" class="block mx-3 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_80/v1633870854/tss/eastern-mountain-sports-logo-05F9379E20-seeklogo.com.png" />`,
+           `<img alt="Champion" class="block mx-3 h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/tss/Champion-logo.png" />`,
+           `<img alt="Liliy Pulitzer" class="block mx-3 h-16 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633871690/tss/lilly-pulitzer-logo_0.png" />`,
+            `<img alt="Sundance" class="mx-3 block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1635942907/tss/71835468_10157074377789790_6526269524293976064_n_400x.png" />`,
             `<img alt="Amazon" class="block mx-3 my-auto h-14" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870945/tss/amazon-logo-transparent.png" />`,
+            `<img alt="Being Human" class="block mx-3 my-auto h-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_150/v1633871111/tss/41YTcyA8eeL.png" />`,
             `<img alt="Pantaloons" class="block mx-3 my-auto w-32" src="https://res.cloudinary.com/poorna/image/upload/v1633871039/tss/Pantaloons-Gift-Voucher-SDL026711860-1-90e34.png" />`,
-            `<img alt="Being Human" class="block mx-3 my-auto h-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_150/v1633871111/tss/41YTcyA8eeL.png" />`
+            `<img alt="Killer" class="mx-3 block h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1635943028/tss/98605b358b0a048af6b8cb3e1011917b.png" />`,
     ];
 
     onMount(async ()=>{
         const module = await import('svelte-carousel');
         Carousel = module.default;
-        await import("../modules/maps");
+        // await import("../modules/maps");
     });
 
     const services = [
@@ -251,12 +292,12 @@
         <div class="flex">
             <img height="100" width="100" class="block h-16 w-16" src="/favicon.png" alt="TSS Logo" />
             <div class="my-auto" >
-                <h2 class="block my-auto ml-4 font-display text-3xl text-gray-900" >Textile Sourcing Services</h2>
+                <h2 class="block my-auto ml-4 font-display text-2xl text-gray-900" >Textile Sourcing Services</h2>
                 <h3 class="block text-gray-700 ml-4" > Taking Fashion forward since 1998 – From Runway to Wardrobe </h3>
             </div>
 
         </div>
-        <div class="flex justify-between space-x-6 text-xl font-display">
+        <div class="flex justify-between space-x-6 text-lg font-display">
             <div class="my-auto">
                 <a class="hover:text-tss-600" href="/" >Home</a>
             </div>
@@ -284,7 +325,7 @@
     <div class="flex justify-between p-2" >
         <div class="flex justify-start">
             <img alt="TSS Logo" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_40/v1634060000/tss/favicon.png" >
-            <h2 class="text-2xl font-display text-black ml-2 my-auto" >Textile Sourcing Solutions</h2>
+            <h2 class="text-xl font-display text-black ml-2 my-auto" >Textile Sourcing Solutions</h2>
         </div>
         <button on:click={toggleNav} class="block my-auto mr-3" >
             <svg class="{navOpen ? 'text-gray-400 block fill-current' : 'block fill-current'}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -310,13 +351,13 @@
 <!-- ABOUT US -->
 <div id="about" class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6">
     <div class="lg:grid lg:grid-flow-row lg:grid-cols-6">
-        <div class="col-span-2 my-auto" >
+        <div class="col-span-3 my-auto" >
             <div class="block" >
             <p class="text-xl"  >About us</p>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
             <h3 class="lg:text-4xl 2xl:text-6xl text-4xl font-display text-tss-accent mt-2" >Fit for the very Best</h3>
 
-            <div class="mt-4 lg:text-base 2xl:w-3/4">
+            <div class="mt-4 lg:text-base lg:w-10/12 2xl:w-3/4">
                 <p class="" >
                     <FadeInText text={`Headquartered in Bangalore, TSS started way back in 1998 when we made sourcing from Southeast Asia
                         more efficient by providing Fast Cost, Friendly &amp; Flexible Service Tailored to individual client needs.`} />
@@ -331,8 +372,9 @@
                 </p>
                 <p class="mt-3" >
                     <FadeInText
-                        text={`We have supported iconic Brands like Abercrombie & Fitch, American Eagle, Ralph Lauren, Super Dry
-                            build & grow their business in Indian Sub-continent by ethical & sustainable sourcing.`}
+                        text={`Over the years, we have supported iconic Brands like Abercrombie &amp; Fitch, American Eagle, Ralph
+                            Lauren, Super Dry &amp; many more brands build &amp; grow their business in the Indian Sub-continent by
+                            ethical &amp; sustainable sourcing.`}
                     />
                     
                 </p>
@@ -340,11 +382,16 @@
         </div>
 
         </div>
-        <div class="col-span-4 my-auto">
+        <div class="col-span-3 my-auto">
             <div class="flex lg:justify-end justify-center lg:mt-0 mt-4" >
-                <img class="relative xl:h-80 h-56 lg:-right-52 rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634224235/tss/pexels-ksenia-chernaya-3965545.png" />
-                <img class="rounded-md relative hidden lg:block   lg:-bottom-10 border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_400/v1634223956/tss/pexels-ron-lach-9849320.png" alt="BG"  />
+                <!-- <img class="relative xl:h-80 h-56 lg:-right-52 rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634224235/tss/pexels-ksenia-chernaya-3965545.png" />
+                <img class="rounded-md relative hidden lg:block   lg:-bottom-10 border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_400/v1634223956/tss/pexels-ron-lach-9849320.png" alt="BG"  /> -->
                                 
+                <video autoplay loop muted style="xl:h-80 h-56 rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" >
+                    <source src="https://res.cloudinary.com/poorna/video/upload/c_scale,w_600/v1635940989/tss/production_ID_4621999.mp4" type="video/mp4" >
+                    <source src="https://res.cloudinary.com/poorna/video/upload/c_scale,w_600/v1635940989/tss/production_ID_4621999.webm" type="video/webm" />
+                </video>
+
             </div>
         </div>
     </div>
@@ -366,21 +413,22 @@
         </h3>
         <div class="mt-4 text-gray-200" >
             <p>
-                <FadeInText text={`We are on a mission to leverage our Experience, Knowledge & Network to help Global &amp; India retail
-                    brands build & grow their business in Indian Sub-continent.`} className="animate__slideInUp" />
+                <FadeInText text={`We are on a mission to leverage our experience, knowledge &amp; network to help global &amp; Indian retail
+                    brands build & grow their business in the Indian Sub-continent.`} className="animate__slideInUp" />
             </p>
             <p class="mt-3">
                 <FadeInText text={`Our ability to anticipate future challenges & respond effectively to changing market demands is our core strength
-                    that we offer to both our Vendor &amp; Customer partners to build a Sustainable, Trustworthy & Valuable business.`} className="animate__slideInUp" />
+                    that we offer to both our Vendor & Customer partners in building a sustainable & ethical business.`} className="animate__slideInUp" />
             </p>
             <p class="mt-3">
-                <FadeInText text={`Passion for detail, Transparency & customer satisfaction are our key driving force behind our strong
-                    partnerships we built over the years.`} className="animate__slideInUp" />
+                <FadeInText text={`Passion for detail, transparency & customer satisfaction are the key driving force behind our strong
+                    partnerships that we have built over the years.`} className="animate__slideInUp" />
             </p>
             <p class="mt-3">
-                <FadeInText text={`When it comes to servicing some of the best &amp; biggest brands in the world, we ensure our design team
-                    is on par with the best in the international industry. Our team brings real insight into current trends with
-                    their expertise in on ground sourcing so that our customers are empowered to bring their ideas to life.`} className="animate__slideInUp" />
+                <FadeInText text={`When it comes to servicing some of the best & biggest brands in the world, we ensure our design team
+                    is on par with the best in the industry & our team brings real time insight into current trends with their
+                    expertise in design & international sourcing so that our customers are empowered to bring their ideas to
+                    life.`} className="animate__slideInUp" />
             </p>
         </div>
         <a href="#contact" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl lg:text-lg ring-2 hover:ring-4" >
@@ -405,11 +453,15 @@
 </div>
 
 <!-- OUR SERVICES -->
-<div id="services" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-accent" >
+<div id="services" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-opacity-50 bg-gray-900 services-bg" >
+    <video autoplay loop muted class="video-service-ctn" >
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,q_auto,vc_auto,w_2000/v1635269236/tss/pexels-karolina-grabowska-5743177.mp4" type="video/mp4" >
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,q_auto,vc_auto,w_2000/v1635269236/tss/pexels-karolina-grabowska-5743177.webm" type="video/webm" />
+    </video>
     <div>
         <h4 class="text-xl text-gray-200" >Our Services</h4>
         <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-        <h1 class="lg:text-4xl text-4xl font-display text-white mt-3" > We provide 360-degree solution to our business partners </h1>
+        <h1 class="lg:text-4xl text-4xl font-display text-white mt-3" > We provide 360-degree solution to your business </h1>
     </div>
     <div class="grid grid-flow-row lg:grid-cols-3 grid-cols-2 mt-4 lg:grid-rows-3" >
         
@@ -447,9 +499,9 @@
 </div>
 
 <!-- PRODUCTS -->
-<div id="products" class="bg-tss-600" >
+<div style="background-image: url(https://res.cloudinary.com/poorna/image/upload/v1634188547/tss/tss_wall.png);" id="products" class="bg-tss-600" >
     <div class="2xl:px-44 lg:px-14 lg:pt-20 pt-8 pb-2 px-6 " >
-        <h3 class="text-4xl text-white font-display" >Products and Apparels</h3>    
+        <h3 class="text-4xl text-black font-display" >Products</h3>    
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
 
         <div class="mt-4 grid lg:grid-cols-4 grid-cols-2" >
@@ -487,7 +539,10 @@
             </div>
         </div>
         <div >
-            <div class="lg:mt-10" style="height: 70vh;" id="chartdiv" ></div>
+            <!-- <div class="lg:mt-10" style="height: 90vh;" id="chartdiv" ></div> -->
+            <div class="mt-10 flex justify-center">
+                <img class="fullscreen-70" alt="Map of partner locations" src="https://res.cloudinary.com/poorna/image/upload/v1635940591/tss/Screenshot_2021-11-03_at_17-26-22_Textile_Sourcing_Services_Your_trusted_textile_sourcing_and_solutions_partner.png" />
+            </div>
         </div>
     </div>
 </div>

@@ -125,9 +125,11 @@ destinationImageTemplate.nonScaling = true;
 destinationImageTemplate.tooltipText = "{title}";
 destinationImageTemplate.fill = interfaceColors.getFor("alternativeBackground");
 destinationImageTemplate.setStateOnChildren = true;
-destinationImageTemplate.states.create("hover");
+// destinationImageTemplate.states.create("hover");
 destinationImageTemplate.showTooltipOn = "always" ;
-
+destinationImageTemplate.tooltipY = am4core.percent(0);
+destinationImageTemplate.tooltipX = am4core.percent(100);
+destinationImageTemplate.tooltipPosition = "fixed";
 destinationImageTemplate.propertyFields.latitude = "latitude";
 destinationImageTemplate.propertyFields.longitude = "longitude";
 destinationImageTemplate.propertyFields.id = "id";

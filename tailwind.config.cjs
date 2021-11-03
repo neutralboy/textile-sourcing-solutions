@@ -5,8 +5,8 @@ const config = {
 	],
 	theme: {
 		fontFamily: {
-			body: ['Open Sans', 'sans-serif'],
-			display: ['Architects Daughter', 'cursive']
+			body: ['Roboto', 'sans-serif'],
+			display: ['Roboto', 'sans-serif']
 		},
 		extend: {
 			colors: {
