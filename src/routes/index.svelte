@@ -21,7 +21,7 @@
     }
     @media only screen and (min-width: 992px) {
         .mission-bg{
-            height: 70vh;
+            /* height: 70vh; */
             overflow: hidden;
             position: relative;
         }
