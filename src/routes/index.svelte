@@ -12,6 +12,13 @@
     <!-- <meta property="og:url" content="https://tss.com" /> -->
 </svelte:head>
 <style>
+    .products-bg{
+        /* background: linear-gradient(45deg,#CB5EEE, #4BE1EC) W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_1000/v1636436132/tss/pexels-arina-krasnikova-7002964.png);
+        /* background-image: url(https://res.cloudinary.com/poorna/image/upload/c_scale,w_1200/v1636438584/tss/pexels-monstera-7794364.png); */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     @media only screen and (min-width: 992px) {
         .mission-bg{
             height: 70vh;
@@ -108,7 +115,8 @@
 
     let brands = [
             `<img class="block mx-3" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />`,
-            `<img alt="Ralph Lauren" class="block mx-3 h-20" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />`,
+            `<img class="block mx-3" alt="Ralph Lauren" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1636434111/tss/ralph-lauren-logo-evolution.png" />`,
+            // `<img alt="Ralph Lauren" class="block mx-3 h-20" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />`,
             `<img alt="Hollister" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Hollister-symbol.png" />`,
             ` <img alt="American Eagle" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/American-Eagle-Logo-1985.png" />`,
             `<img class="block mx-3 w-32 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_200/v1635942435/tss/877cbd5d8ca8d415a541f9274fcd0ea2.png" alt="Chubbies" />`,
@@ -122,6 +130,15 @@
             `<img alt="Pantaloons" class="block mx-3 my-auto w-32" src="https://res.cloudinary.com/poorna/image/upload/v1633871039/tss/Pantaloons-Gift-Voucher-SDL026711860-1-90e34.png" />`,
             `<img alt="Killer" class="mx-3 block h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1635943028/tss/98605b358b0a048af6b8cb3e1011917b.png" />`,
     ];
+
+    // CHENNIA
+    // COIMBATORE
+    // TIRRUPUR
+    // DELHI
+    // LUDHIANA
+    // BANGALORE
+    // BIJAPUR
+    // DHAKA
 
     onMount(async ()=>{
         const module = await import('svelte-carousel');
@@ -153,7 +170,7 @@
         }, 
         {
             name: "Quality",
-            tagline: "Good Quality Never Goes out of Fashion",
+            tagline: "Good quality never goes out of fashion",
             image: `<svg class="inline-block fill-current text-gray-600" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 21H13V15H21V21ZM11 21H3V11H11V21ZM21 13H13V3H21V13ZM11 9H3V3H11V9Z" fill="#2E3A59"></path>
                 </svg>
@@ -221,7 +238,7 @@
         },
         {
             name: "Fabric R&D",
-            tagline: "",
+            tagline: "Innovation is the future",
             image: `<svg class="inline-block fill-current text-gray-600" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 23.27L3 16.27L4.62 15.01L11.99 20.74L19.37 15.001L21 16.27L12 23.27ZM12 19L3 12L4.62 10.74L11.99 16.47L19.37 10.73L21 12L12 19ZM12 14.73L4.63 9.00001L3 7.73001L12 0.730011L21 7.73001L19.36 9.00001L12 14.73Z" fill="#2E3A59"></path>
                 </svg>
@@ -308,6 +325,9 @@
                 <a class="hover:text-tss-600" href="#mission" >Mission</a>
             </div>
             <div class="my-auto">
+                <a class="hover:text-tss-600" href="#clientele" >Clientele</a>
+            </div>
+            <div class="my-auto">
                 <a class="hover:text-tss-600" href="#services" >Services</a>
             </div>
             <div class="my-auto">
@@ -355,18 +375,18 @@
             <div class="block" >
             <p class="text-xl"  >About us</p>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-            <h3 class="lg:text-4xl 2xl:text-6xl text-4xl font-display text-tss-accent mt-2" >Fit for the very Best</h3>
+            <h3 class="lg:text-3xl 2xl:text-6xl text-3xl font-display text-tss-accent mt-2" >Fit for the very Best</h3>
 
             <div class="mt-4 lg:text-base lg:w-10/12 2xl:w-3/4">
                 <p class="" >
                     <FadeInText text={`Headquartered in Bangalore, TSS started way back in 1998 when we made sourcing from Southeast Asia
-                        more efficient by providing Fast Cost, Friendly &amp; Flexible Service Tailored to individual client needs.`} />
+                        more efficient by providing fast, cost, friendly &amp; flexible service tailored to individual client needs.`} className="animate__slideInLeft" />
                 </p>
                 <p class="mt-3">
                     <FadeInText
                         text={`Today we run a powerhouse, that services some of the most respected &amp; culturally significant brands in
                             the world doing everything we can to ensure their presence reaches every corner of the globe.`}
-                        className="animate__fadeInRight"
+                        className="animate__slideInLeft animate__delay-1s animate__slower"
                     />
                     
                 </p>
@@ -374,7 +394,7 @@
                     <FadeInText
                         text={`Over the years, we have supported iconic Brands like Abercrombie &amp; Fitch, American Eagle, Ralph
                             Lauren, Super Dry &amp; many more brands build &amp; grow their business in the Indian Sub-continent by
-                            ethical &amp; sustainable sourcing.`}
+                            ethical &amp; sustainable sourcing.`} className="animate__slideInLeft animate__delay-3s animate__slower"
                     />
                     
                 </p>
@@ -387,7 +407,7 @@
                 <!-- <img class="relative xl:h-80 h-56 lg:-right-52 rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" alt="bags" src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634224235/tss/pexels-ksenia-chernaya-3965545.png" />
                 <img class="rounded-md relative hidden lg:block   lg:-bottom-10 border-b-4 border-r-4 border-tss-accent shadow-md " src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_400/v1634223956/tss/pexels-ron-lach-9849320.png" alt="BG"  /> -->
                                 
-                <video autoplay loop muted style="xl:h-80 h-56 rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" >
+                <video autoplay loop muted style="xl:h-80 h-64 rounded-md lg:rounded-br-md z-10 border-b-4 border-r-4 lg:border-b-8 lg:border-r-8 lg:border-white border-tss-accent" >
                     <source src="https://res.cloudinary.com/poorna/video/upload/c_scale,w_600/v1635940989/tss/production_ID_4621999.mp4" type="video/mp4" >
                     <source src="https://res.cloudinary.com/poorna/video/upload/c_scale,w_600/v1635940989/tss/production_ID_4621999.webm" type="video/webm" />
                 </video>
@@ -408,27 +428,27 @@
             Our Mission
         </h4>
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
-        <h3 class="lg:text-4xl text-2xl font-display text-white mt-4" >
+        <h3 class="lg:text-3xl text-2xl font-display text-white mt-4" >
             It takes the best to service the best
         </h3>
-        <div class="mt-4 text-gray-200" >
+        <div class="mt-4 text-gray-200 text-lg" >
             <p>
                 <FadeInText text={`We are on a mission to leverage our experience, knowledge &amp; network to help global &amp; Indian retail
-                    brands build & grow their business in the Indian Sub-continent.`} className="animate__slideInUp" />
+                    brands build & grow their business in the Indian Sub-continent.`} className="animate__slideInLeft" />
             </p>
             <p class="mt-3">
                 <FadeInText text={`Our ability to anticipate future challenges & respond effectively to changing market demands is our core strength
-                    that we offer to both our Vendor & Customer partners in building a sustainable & ethical business.`} className="animate__slideInUp" />
+                    that we offer to both our Vendor & Customer partners in building a sustainable & ethical business.`} className="animate__delay-1s animate__slideInLeft animate__slower" />
             </p>
             <p class="mt-3">
                 <FadeInText text={`Passion for detail, transparency & customer satisfaction are the key driving force behind our strong
-                    partnerships that we have built over the years.`} className="animate__slideInUp" />
+                    partnerships that we have built over the years.`} className="animate__delay-3s animate__slideInLeft animate__slower" />
             </p>
             <p class="mt-3">
                 <FadeInText text={`When it comes to servicing some of the best & biggest brands in the world, we ensure our design team
                     is on par with the best in the industry & our team brings real time insight into current trends with their
                     expertise in design & international sourcing so that our customers are empowered to bring their ideas to
-                    life.`} className="animate__slideInUp" />
+                    life.`} className="animate__delay-5s animate__slideInLeft animate__slower" />
             </p>
         </div>
         <a href="#contact" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl lg:text-lg ring-2 hover:ring-4" >
@@ -461,7 +481,7 @@
     <div>
         <h4 class="text-xl text-gray-200" >Our Services</h4>
         <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-        <h1 class="lg:text-4xl text-4xl font-display text-white mt-3" > We provide 360-degree solution to your business </h1>
+        <h1 class="lg:text-3xl text-3xl font-display text-white mt-3" > We provide 360-degree solution to your business </h1>
     </div>
     <div class="grid grid-flow-row lg:grid-cols-3 grid-cols-2 mt-4 lg:grid-rows-3" >
         
@@ -481,7 +501,7 @@
                         </div>
                     </div>
                     <div>
-                        <p class="my-1 text-center" >{tagline || ""}</p>
+                        <p class="my-1 text-center first-letter:capitalize lowercase" >{tagline || ""}</p>
                     </div>
                 </div>
                 {#if desc }
@@ -499,9 +519,9 @@
 </div>
 
 <!-- PRODUCTS -->
-<div style="background-image: url(https://res.cloudinary.com/poorna/image/upload/v1634188547/tss/tss_wall.png);" id="products" class="bg-tss-600" >
+<div id="products" class="bg-tss-600 products-bg " >
     <div class="2xl:px-44 lg:px-14 lg:pt-20 pt-8 pb-2 px-6 " >
-        <h3 class="text-4xl text-black font-display" >Products</h3>    
+        <h3 class="text-3xl text-black font-display" >Products</h3>    
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
 
         <div class="mt-4 grid lg:grid-cols-4 grid-cols-2" >
@@ -530,7 +550,7 @@
 <div class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6" >
     <div >
         <div >
-            <h3 class="lg:text-4xl text-4xl font-display text-gray-800" >Partner locations</h3>
+            <h3 class="lg:text-3xl text-3xl font-display text-gray-800" >Partner locations</h3>
             <div class="w-7 h-1 bg-tss-accent mt-2"></div>
             <div class="mt-6 lg:text-lg">
                 <p>
@@ -541,7 +561,7 @@
         <div >
             <!-- <div class="lg:mt-10" style="height: 90vh;" id="chartdiv" ></div> -->
             <div class="mt-10 flex justify-center">
-                <img class="fullscreen-70" alt="Map of partner locations" src="https://res.cloudinary.com/poorna/image/upload/v1635940591/tss/Screenshot_2021-11-03_at_17-26-22_Textile_Sourcing_Services_Your_trusted_textile_sourcing_and_solutions_partner.png" />
+                <img class="fullscreen-70" alt="Map of partner locations" src="https://res.cloudinary.com/poorna/image/upload/v1636438485/tss/Screenshot_2021-11-09_at_11-43-37_Screenshot.png" />
             </div>
         </div>
     </div>
@@ -551,18 +571,30 @@
 <div id="contact" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200 lg:grid lg:grid-cols-4" >
     <div class="lg:col-span-3 " >
         <div>
-            <h3 class="text-tss-accent lg:text-4xl text-4xl font-display mt-2" > Reach out to us </h3>
+            <h3 class="text-tss-accent lg:text-3xl text-3xl font-display mt-2" > Reach out to us </h3>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
-            <p class="mt-3 lg:text-lg" >
-                Find out how TSS can help your business grow. Fill the form and we'll reach out to you.
-            </p>
+        </div>
+        <div class="mt-3" >
+            <p class="text-2xl font-display text-gray-800" >Registered Address:</p>
+            <div class="mt-3 text-gray-700 my-auto" >
+                <p class="block text-xl" >
+                    No . 2 , Hayes Road , Richmond Town
+                    <br>
+                    Bangalore - 560025
+                    <br>
+                    Karnataka
+                    <br>
+                    India
+                </p>
+            </div>
+            <div class="mt-3 text-tss-accent text-xl" >
+                <a href="tel:08041121400" > 080 41121400 </a>
+                <br>
+                <a href="mailto:contact@tssindia.com" >contact@tssindia.com</a>
+            </div>
         </div>
 
-        <div>
-
-            <div>
-            
-                <!-- form - start -->
+            <!-- <div>
                 <form class="max-w-screen-md grid sm:grid-cols-2 gap-4 text-sm mt-4">
                   <div>
                     <label for="name" class="inline-block text-gray-800 text-sm sm:text-base mb-2">Name*</label>
@@ -600,32 +632,9 @@
                   </div>
             
                 </form>
-                <!-- form - end -->
-              </div>
+              </div> -->
 
 
-        </div>
-
-
-    </div>
-    <div class="lg:col-span-1 my-auto lg:mt-0 mt-6" >
-        <p class="text-lg font-display text-gray-800" >Registered Address:</p>
-        <div class="mt-3 text-gray-700 my-auto" >
-            <p class="block" >
-                No . 2 , Hayes Road , Richmond Town
-                <br>
-                Bangalore - 560025
-                <br>
-                Karnataka
-                <br>
-                India
-            </p>
-        </div>
-        <div class="mt-3 text-tss-accent" >
-            <a href="tel:+918041121400" > +91 80 41121400 </a>
-            <br>
-            <a href="mailto:contact@tssindia.com" >contact@tssindia.com</a>
-        </div>
     </div>
 </div>
 

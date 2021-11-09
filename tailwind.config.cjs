@@ -5,8 +5,8 @@ const config = {
 	],
 	theme: {
 		fontFamily: {
-			body: ['Roboto', 'sans-serif'],
-			display: ['Roboto', 'sans-serif']
+			body: ['Architects Daughter'],
+			display: ['Architects Daughter']
 		},
 		extend: {
 			colors: {

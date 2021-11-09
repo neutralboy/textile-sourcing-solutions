@@ -26,7 +26,7 @@ const originCities = [
     {
         "id": "bangalore",
         "title": "Bangalore",
-        "destinations": ["new delhi", "dhaka", "bijapur", "tirupur", "hosur"],
+        "destinations": ["new delhi", "dhaka", "bijapur",  "coimbatore", "hosur", "blr", "ludhiana", "chennai"],
         "latitude": 12.972442,
         "longitude": 77.580643
     }
@@ -51,17 +51,35 @@ const destinationCities = [
         latitude: 16.827545,
         longitude: 75.725327
     },
+    // {
+    //     id: "hosur",
+    //     title: "Hosur",
+    //     latitude: 12.735126,
+    //     longitude: 77.829338
+    // }
     {
-        id: "tirupur",
-        title: "Tiruppur",
-        latitude: 11.110695,
-        longitude: 77.348045
+        id: "coimbatore",
+        title: "Coimbatore / Tiruppur",
+        latitude: 11.004556,
+        longitude: 76.961632
     },
     {
-        id: "hosur",
-        title: "Hosur",
-        latitude: 12.735126,
-        longitude: 77.829338
+        id: "ludhiana",
+        title: "Ludhiana",
+        latitude: 30.900965,
+        longitude: 75.857277
+    },
+    {
+        "id": "blr",
+        "title": "Bangalore",
+        "latitude": 12.972442,
+        "longitude": 77.580643
+    },
+    {
+        id: "chennai",
+        title:"Chennai",
+        latitude: 13.067439,
+        longitude: 80.237617
     }
 ];
 
@@ -89,7 +107,8 @@ originImageTemplate.propertyFields.id = "id";
 
 originImageTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer;
 originImageTemplate.nonScaling = true;
-originImageTemplate.tooltipText = "{title}";
+// originImageTemplate.tooltipText = "{title}";
+originImageTemplate.tooltipHTML = "<span stlye='font-size: 30;' > {title} </span>"
 
 originImageTemplate.setStateOnChildren = true;
 originImageTemplate.states.create("hover");
@@ -127,7 +146,7 @@ destinationImageTemplate.fill = interfaceColors.getFor("alternativeBackground");
 destinationImageTemplate.setStateOnChildren = true;
 // destinationImageTemplate.states.create("hover");
 destinationImageTemplate.showTooltipOn = "always" ;
-destinationImageTemplate.tooltipY = am4core.percent(0);
+destinationImageTemplate.tooltipY = am4core.percent(-10);
 destinationImageTemplate.tooltipX = am4core.percent(100);
 destinationImageTemplate.tooltipPosition = "fixed";
 destinationImageTemplate.propertyFields.latitude = "latitude";
