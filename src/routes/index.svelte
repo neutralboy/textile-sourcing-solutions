@@ -464,7 +464,7 @@
 </div>
 
 <!-- CLIENT CAROUSEL -->
-<div class="py-3 bg-gray-100">
+<div id="clientele" class="py-3 bg-gray-100">
     <h3 class="text-2xl text-center font-display text-gray-600"> Our Clientele </h3>
     <div>
         <svelte:component this={Carousel} bind:this={carousel} arrows={false} autoplay={true} dots={false} particlesToShow={8} autoplayDuration={15} >
