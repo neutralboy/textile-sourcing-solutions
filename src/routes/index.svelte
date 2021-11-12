@@ -98,7 +98,9 @@
     import FadeInText from "../modules/FadeInText.svelte";
 
     let Carousel;
+    let DesktopCarousel;
     let carousel;
+    let dekstopCarousel;
 
     let moreWindowOpen = false;
     let navOpen = false;
@@ -143,6 +145,7 @@
     onMount(async ()=>{
         const module = await import('svelte-carousel');
         Carousel = module.default;
+        DesktopCarousel = module.default;
         // await import("../modules/maps");
     });
 
@@ -239,7 +242,7 @@
         },
         {
             name: "Fabric R&D",
-            tagline: "Innovation is the future",
+            tagline: "Leading through Innovation",
             image: `<svg class="inline-block fill-current text-gray-600" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 23.27L3 16.27L4.62 15.01L11.99 20.74L19.37 15.001L21 16.27L12 23.27ZM12 19L3 12L4.62 10.74L11.99 16.47L19.37 10.73L21 12L12 19ZM12 14.73L4.63 9.00001L3 7.73001L12 0.730011L21 7.73001L19.36 9.00001L12 14.73Z" fill="#2E3A59"></path>
                 </svg>
@@ -360,6 +363,7 @@
         <a class="block" href="/" >Home</a>
         <a class="block" href="#about" >About</a>
         <a class="block" href="#mission" >Mission</a>
+        <a class="block" href="#services" >Clientele</a>
         <a class="block" href="#services" >Services</a>
         <a class="block" href="#products" >Products</a>
         <a class="block" href="#contact" >Contact</a>
@@ -466,8 +470,17 @@
 <!-- CLIENT CAROUSEL -->
 <div id="clientele" class="py-3 bg-gray-100">
     <h3 class="text-2xl text-center font-display text-gray-600"> Our Clientele </h3>
-    <div>
-        <svelte:component this={Carousel} bind:this={carousel} arrows={false} autoplay={true} dots={false} particlesToShow={8} autoplayDuration={15} >
+    <!-- MOBILE CAROUSEL -->
+    <div class="lg:hidden block" >
+        <svelte:component this={Carousel} bind:this={carousel} arrows={false} autoplay={true} dots={false} particlesToShow={2} autoplayDuration={15} >
+            {#each brands as brand}
+                {@html brand}
+            {/each}
+        </svelte:component>
+    </div>
+    <!-- DESKTOP CAROUSEL -->
+    <div class="hidden lg:block" >
+        <svelte:component this={DesktopCarousel} bind:this={dekstopCarousel} arrows={false} autoplay={true} dots={false} particlesToShow={8} autoplayDuration={15} >
             {#each brands as brand}
                 {@html brand}
             {/each}
@@ -487,17 +500,18 @@
         <h1 class="lg:text-3xl text-3xl font-display text-white mt-3" > We provide 360-degree solution to your business </h1>
     </div>
     <div class="grid grid-flow-row lg:grid-cols-3 grid-cols-2 mt-4 lg:grid-rows-3" >
-        
         {#each services as {name, image, tagline, desc}, s}
 
         <div class="col-span-1 lg:mx-1 m-1 my-3 block">
             <div class="bg-tss-200 shadow-md pb-3 h-full" >
                 <div class=" px-1 flex flex-col justify-between h-full" >
-                    <div class="lg:flex lg:flex-row lg:justify-around lg:my-auto mx-auto lg:mx-0" >
-                        <div class="text-center rounded-full bg-gray-200 inline-block p-3 lg:my-auto mx-auto lg:mx-0 mt-2" >
-                            {@html image}
+                    <div class="lg:flex lg:flex-row flex-col justify-center lg:justify-around lg:my-auto mx-auto lg:mx-0" >
+                        <div class="flex justify-center  lg:mx-0 mt-2" >
+                            <div class="rounded-full bg-gray-200  p-3 lg:my-auto mx-auto" >
+                                {@html image}
+                            </div>
                         </div>
-                        <div class="lg:my-auto mt-2" >
+                        <div class="lg:my-auto mt-2 block" >
                             <h4 class="text-lg text-center text-green-800 font-display font-light lg:my-auto"> 
                                 {name}
                             </h4>
