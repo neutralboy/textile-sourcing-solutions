@@ -26,6 +26,7 @@
 		"prettier-plugin-svelte": "^2.4.0",
 		"svelte": "^3.42.6",
 		"svelte-check": "^2.2.6",
+		"svelte-lightbox": "^0.6.1",
 		"svelte-preprocess": "^4.7.3",
 		"tailwindcss": "^2.2.4",
 		"tslib": "^2.3.1",
@@ -36,6 +37,7 @@
 		"@amcharts/amcharts4": "^4.10.22",
 		"@amcharts/amcharts4-geodata": "^4.1.22",
 		"package.json": "^2.0.1",
-		"svelte-carousel": "^1.0.16"
+		"svelte-carousel": "^1.0.16",
+		"svelte-gallery": "^1.3.4"
 	}
 }

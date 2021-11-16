@@ -5,6 +5,8 @@
     <meta name="Description" content="Headquartered in Bangalore TSS has been a leading ethical apparel and accessories sourcing solutions provider since 23 years"  >
     <meta property="og:title" content="Textile Sourcing Services | Your trusted textile sourcing and solutions partner" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tssindia.com/" />
+    <meta property="og:image" content="https://res.cloudinary.com/poorna/image/upload/v1634060000/tss/favicon.png" />
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -96,11 +98,19 @@
 <script>
     import {onMount} from "svelte";
     import FadeInText from "../modules/FadeInText.svelte";
+    import { Lightbox, LightboxGallery, LightboxImage } from 'svelte-lightbox';
 
     let Carousel;
     let DesktopCarousel;
     let carousel;
     let dekstopCarousel;
+    // SECTIONS
+    let topSection;
+    let missionSection;
+    let aboutSection;
+    let clientSection;
+    let servicesSection;
+    let productsSection;
 
     let moreWindowOpen = false;
     let navOpen = false;
@@ -133,21 +143,25 @@
             `<img alt="Killer" class="mx-3 block h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1635943028/tss/98605b358b0a048af6b8cb3e1011917b.png" />`,
     ];
 
-    // CHENNIA
-    // COIMBATORE
-    // TIRRUPUR
-    // DELHI
-    // LUDHIANA
-    // BANGALORE
-    // BIJAPUR
-    // DHAKA
-
     onMount(async ()=>{
         const module = await import('svelte-carousel');
         Carousel = module.default;
         DesktopCarousel = module.default;
         // await import("../modules/maps");
     });
+
+    const scrollToSection = (elem) => {
+        // let pos= {y: 0};
+        // pos = elem.getBoundingClientRect();
+        // console.log(pos);
+        // let st =  0
+        // st = pos.y - 100;
+        // window.scrollTo({ 
+        //     top: st,
+
+        // });
+        elem.scrollIntoView({ block: "center" })
+    };
 
     const services = [
         {
@@ -262,38 +276,41 @@
 
     const products = [
         {
-            name: "Men's wear",
-            content: "Shirts, Jackets & Bottoms",
-            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634407403/tss/pexels-anna-tis-7006753.png"
+            name: "Mens and Kids wear",
+            content: "Shirts & Bottoms",
+            bg: "https://res.cloudinary.com/poorna/image/upload/v1637084117/tss/Screenshot_from_2021-11-16_23-04-22.png",
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637083979/tss/Screenshot_from_2021-11-16_23-02-35.png"
         },
         {
-            name: "Women's wear",
-            content: "Tops, Skirts, Dresses, Bottoms & Jackets",
-            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634454479/tss/pexels-ron-lach-8386652.png"
-        },
-        {
-            name: "Kids's wear",
-            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455077/tss/pexels-polina-tankilevitch-3875080.png"
+            name: "Womens wear",
+            content: "Tops, Skirts, Dresses & Bottoms",
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_500/v1637079601/tss/WhatsApp_Image_2021-11-12_at_17.12.41.png",
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637079936/tss/womens%20wear.png"
         },
         {
             name: "Knits",
             content: "Tee, Polo, Sweatshirt & Outerwear",
-            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455467/tss/mediamodifier-kJXGTOY1wLQ-unsplash.png"
+            bg: "https://res.cloudinary.com/poorna/image/upload/v1637083448/tss/Screenshot_2021-11-16_22-53-53.png",
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637083053/tss/Dribbble_Shot_HDknits.png"
+
         },
         {
-            name: "Leather",
+            name: "Outer wear Men and Women",
             content: "Apparel & Small Leather Goods",
-            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455598/tss/robbie-noble-ruNmAlLLnpo-unsplash.png"
+            bg: "https://res.cloudinary.com/poorna/image/upload/v1637079271/tss/Screenshot_2021-11-16_at_21-43-40_We_can_take_pics_from_the_ppt_for_Accessories_-_leopoorna99_gmail_com_-_Gmail.png",
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637079317/tss/Screenshot_2021-11-16_at_21-43-22_We_can_take_pics_from_the_ppt_for_Accessories_-_leopoorna99_gmail_com_-_Gmail.png"
         },
         {
             name: "Accessories",
             content: "Scarves, Jewellery, Bags & Belts",
-            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455766/tss/trinh-minh-th-ScYGyGhA9HQ-unsplash.png"
+            bg: "https://res.cloudinary.com/poorna/image/upload/v1637078937/tss/Screenshot_2021-11-16_at_21-38-31_PowerPoint_Presentation_-_Leather_PPT_Men_s_pdf.png",
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637079067/tss/Dribbble_Shot_HDaccessories.png"
         },
         {
             name: "Home",
             content: "Towels, Bedsheets & Cushion Covers",
-            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_600/v1634455896/tss/sven-mieke-BB3dR-N5Npg-unsplash.png"
+            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_500/v1637077909/tss/WhatsApp_Image_2021-11-09_at_12.10.36.png",
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637077786/tss/Dribbble_Shot_HD.png"
         }
     ];
 
@@ -306,12 +323,11 @@
         };
 
     };
-
 </script>
 
 <!-- DESKTOP NAV -->
 <nav class="hidden lg:flex justify-center sticky top-0 bg-white z-50">
-    <div class="flex justify-between py-4 pl-4 pr-10 shadow-md bg-white rounded sticky w-full">
+    <div class="flex justify-between py-2 pl-4 pr-10 shadow-md bg-white rounded sticky w-full">
         <div class="flex">
             <img height="100" width="100" class="block h-16 w-16" src="/favicon.png" alt="TSS Logo" />
             <div class="my-auto" >
@@ -322,25 +338,25 @@
         </div>
         <div class="flex justify-between space-x-6 text-lg font-display">
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="/" >Home</a>
+                <button on:click|preventDefault={()=>scrollToSection(topSection)} class="hover:text-tss-600" href="/" >Home</button>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="#about" >About</a>
+                <button on:click|preventDefault={()=>scrollToSection(aboutSection)} class="hover:text-tss-600" >About</button>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="#mission" >Mission</a>
+                <button on:click|preventDefault={()=>scrollToSection(missionSection)} class="hover:text-tss-600"  >Mission</button>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="#clientele" >Clientele</a>
+                <button on:click|preventDefault={()=>scrollToSection(clientSection)} class="hover:text-tss-600"  >Clientele</button>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="#services" >Services</a>
+                <button on:click|preventDefault={()=>scrollToSection(servicesSection)} class="hover:text-tss-600"  >Services</button>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="#products" >Products</a>
+                <button on:click|preventDefault={()=>scrollToSection(productsSection)} class="hover:text-tss-600"  >Products</button>
             </div>
             <div class="my-auto">
-                <a class="hover:text-tss-600" href="#contact" >Contact</a>
+                <a href="#contact" class="hover:text-tss-600"  >Contact</a>
             </div>
         </div>
     </div>
@@ -360,23 +376,23 @@
         </button>
     </div>
     <div on:click={toggleNav} class="{navOpen ? 'bg-white px-2 py-2 flex flex-col text-lg space-y-2 shadow-md' : 'hidden'}" >
-        <a class="block" href="/" >Home</a>
-        <a class="block" href="#about" >About</a>
-        <a class="block" href="#mission" >Mission</a>
-        <a class="block" href="#services" >Clientele</a>
-        <a class="block" href="#services" >Services</a>
-        <a class="block" href="#products" >Products</a>
+        <a on:click|preventDefault={()=>scrollToSection(topSection)} class="block" href="/" >Home</a>
+        <a on:click|preventDefault={()=>scrollToSection(aboutSection)} class="block" href="#about" >About</a>
+        <a on:click|preventDefault={()=>scrollToSection(missionSection)} class="block" href="#mission" >Mission</a>
+        <a on:click|preventDefault={()=>scrollToSection(clientSection)} class="block" href="#services" >Clientele</a>
+        <a on:click|preventDefault={()=>scrollToSection(servicesSection)} class="block" href="#services" >Services</a>
+        <a on:click|preventDefault={()=>scrollToSection(productsSection)} class="block" href="#products" >Products</a>
         <a class="block" href="#contact" >Contact</a>
     </div>
 
 </div>
 
-<div class="flex justify-center animate__animated animate__fadeIn" >
+<div bind:this={topSection} class="flex justify-center animate__animated animate__fadeIn" >
     <img alt="Main" src="https://res.cloudinary.com/poorna/image/upload/v1635169034/tss/office_tss.png" />
 </div>
 
 <!-- ABOUT US -->
-<div id="about" class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6">
+<div bind:this={aboutSection} id="about" class="2xl:px-44 lg:px-14 lg:py-20 py-8 px-6">
     <div class="lg:grid lg:grid-flow-row lg:grid-cols-6">
         <div class="col-span-3 my-auto" >
             <div class="block" >
@@ -425,7 +441,7 @@
 </div>
 
 <!-- OUR MISSION -->
-<div id="mission" class="mission-bg bg-gray-900 bg-opacity-50" >
+<div id="mission" bind:this={missionSection} class="mission-bg bg-gray-900 bg-opacity-50" >
     <video autoplay loop muted class="video_ctn" >
         <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,q_auto,vc_auto,w_2000/v1635269236/tss/pexels-karolina-grabowska-5743177.mp4" type="video/mp4" >
         <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,q_auto,vc_auto,w_2000/v1635269236/tss/pexels-karolina-grabowska-5743177.webm" type="video/webm" />
@@ -468,7 +484,7 @@
 </div>
 
 <!-- CLIENT CAROUSEL -->
-<div id="clientele" class="py-3 bg-gray-100">
+<div id="clientele" bind:this={clientSection} class="py-3 bg-gray-100">
     <h3 class="text-2xl text-center font-display text-gray-600"> Our Clientele </h3>
     <!-- MOBILE CAROUSEL -->
     <div class="lg:hidden block" >
@@ -489,7 +505,7 @@
 </div>
 
 <!-- OUR SERVICES -->
-<div id="services" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-opacity-50 bg-gray-900 services-bg" >
+<div id="services" bind:this={servicesSection} class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-opacity-50 bg-gray-900 services-bg" >
     <video autoplay loop muted class="video-service-ctn" >
         <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,w_1000/v1636440743/tss/pexels-ron-lach-8306452.mp4" type="video/mp4" >
         <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,w_1000/v1636440743/tss/pexels-ron-lach-8306452.webm" type="video/webm" />
@@ -536,23 +552,22 @@
 </div>
 
 <!-- PRODUCTS -->
-<div id="products" class="bg-tss-600 products-bg " >
+<div id="products" bind:this={productsSection} class="bg-tss-600 products-bg " >
     <div class="2xl:px-44 lg:px-14 lg:pt-20 pt-8 pb-2 px-6 " >
         <h3 class="text-3xl text-black font-display" >Products</h3>    
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
 
-        <div class="mt-4 grid lg:grid-cols-4 grid-cols-2" >
-            {#each products as { name, bg, content} }
+        <div class="mt-4 grid lg:grid-cols-3 grid-cols-2" >
+            {#each products as { name, bg, content, img} }
                 <div class="bg-white rounded-md m-1 flex flex-col" >
                     <div>
-                        <img class="lg:h-56 h-36 block mx-auto" alt={name} src={bg} />
+                        <Lightbox thumbnail description={content} >
+                            <img slot="thumbnail" class="lg:h-64 h-36 block mx-auto" alt={name} src={bg} />
+                            <img alt={name} src={img ? img : bg} slot="image" />
+                        </Lightbox>
                     </div>
                     <div class="text-center my-auto py-2" >
                         <h4 class="text-2xl block mx-auto font-display" >{name}</h4>
-                        {#if content }
-                            <p class="text-gray-700 mt-2" > {content} </p>
-                        {/if}
-
                     </div>
                 </div>
             {/each}
@@ -655,6 +670,7 @@
     </div>
 </div>
 
+<!-- FOOTER -->
 <div class="bg-tss-200   pt-4 sm:pt-10 lg:pt-12 font-body">
     <footer class="max-w-screen-2xl px-4 md:px-8 mx-auto">
       <div class="flex flex-col items-center border-t pt-6">
