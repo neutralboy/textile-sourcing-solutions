@@ -278,26 +278,26 @@
             name: "Mens and Kids wear",
             content: "Shirts & Bottoms",
             bg: "https://res.cloudinary.com/poorna/image/upload/v1637084117/tss/Screenshot_from_2021-11-16_23-04-22.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637083979/tss/Screenshot_from_2021-11-16_23-02-35.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637161610/tss/Screenshot_from_2021-11-17_20-36-41.png"
         },
         {
             name: "Womens wear",
             content: "Tops, Skirts, Dresses & Bottoms",
-            bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_500/v1637079601/tss/WhatsApp_Image_2021-11-12_at_17.12.41.png",
+            bg: "https://res.cloudinary.com/poorna/image/upload/v1637158330/tss/image1.png",
             img: "https://res.cloudinary.com/poorna/image/upload/v1637079936/tss/womens%20wear.png"
         },
         {
             name: "Knits",
             content: "Tee, Polo, Sweatshirt & Outerwear",
-            bg: "https://res.cloudinary.com/poorna/image/upload/v1637158330/tss/image1.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637083053/tss/Dribbble_Shot_HDknits.png"
+            bg: "https://res.cloudinary.com/poorna/image/upload/v1637083053/tss/Dribbble_Shot_HDknits.png",
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637161521/tss/Screenshot_from_2021-11-17_20-35-12.png"
 
         },
         {
             name: "Outer wear Men and Women",
             content: "Apparel & Small Leather Goods",
             bg: "https://res.cloudinary.com/poorna/image/upload/v1637079271/tss/Screenshot_2021-11-16_at_21-43-40_We_can_take_pics_from_the_ppt_for_Accessories_-_leopoorna99_gmail_com_-_Gmail.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637079317/tss/Screenshot_2021-11-16_at_21-43-22_We_can_take_pics_from_the_ppt_for_Accessories_-_leopoorna99_gmail_com_-_Gmail.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637161751/tss/Screenshot_from_2021-11-17_20-38-55.png"
         },
         {
             name: "Accessories",
