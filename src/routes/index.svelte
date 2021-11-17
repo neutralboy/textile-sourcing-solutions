@@ -151,16 +151,15 @@
     });
 
     const scrollToSection = (elem) => {
-        // let pos= {y: 0};
-        // pos = elem.getBoundingClientRect();
-        // console.log(pos);
-        // let st =  0
-        // st = pos.y - 100;
-        // window.scrollTo({ 
-        //     top: st,
-
-        // });
-        elem.scrollIntoView({ block: "center" })
+        let pos= {y: 0};
+        pos = elem.getBoundingClientRect();
+        console.log(pos);
+        let st =  0
+        st = pos.y - 100;
+        window.scrollBy({ 
+            top: st
+        });
+        // elem.scrollIntoView({ block: "center" })
     };
 
     const services = [
@@ -290,7 +289,7 @@
         {
             name: "Knits",
             content: "Tee, Polo, Sweatshirt & Outerwear",
-            bg: "https://res.cloudinary.com/poorna/image/upload/v1637083448/tss/Screenshot_2021-11-16_22-53-53.png",
+            bg: "https://res.cloudinary.com/poorna/image/upload/v1637158330/tss/image1.png",
             img: "https://res.cloudinary.com/poorna/image/upload/v1637083053/tss/Dribbble_Shot_HDknits.png"
 
         },
@@ -304,7 +303,7 @@
             name: "Accessories",
             content: "Scarves, Jewellery, Bags & Belts",
             bg: "https://res.cloudinary.com/poorna/image/upload/v1637078937/tss/Screenshot_2021-11-16_at_21-38-31_PowerPoint_Presentation_-_Leather_PPT_Men_s_pdf.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637079067/tss/Dribbble_Shot_HDaccessories.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637158600/tss/accessories.png"
         },
         {
             name: "Home",
