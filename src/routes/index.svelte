@@ -506,8 +506,8 @@
 <!-- OUR SERVICES -->
 <div id="services" bind:this={servicesSection} class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-opacity-50 bg-gray-900 services-bg" >
     <video autoplay loop muted class="video-service-ctn" >
-        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,w_1000/v1636440743/tss/pexels-ron-lach-8306452.mp4" type="video/mp4" >
-        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,w_1000/v1636440743/tss/pexels-ron-lach-8306452.webm" type="video/webm" />
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,w_2000/v1636440743/tss/pexels-ron-lach-8306452.mp4" type="video/mp4" >
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,w_2000/v1636440743/tss/pexels-ron-lach-8306452.webm" type="video/webm" />
     </video>
     <div>
         <h4 class="text-xl text-gray-200" >Our Services</h4>
