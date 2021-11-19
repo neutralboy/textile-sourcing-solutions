@@ -99,8 +99,6 @@
     import {onMount} from "svelte";
     import FadeInText from "../modules/FadeInText.svelte";
 
-    import Lightbox from "svelte-lightbox/src/Lightbox.svelte";
-
     let Carousel;
     let DesktopCarousel;
     let carousel;
@@ -112,6 +110,7 @@
     let clientSection;
     let servicesSection;
     let productsSection;
+    let contactSection;
 
     let moreWindowOpen = false;
     let navOpen = false;
@@ -196,7 +195,7 @@
         pos = elem.getBoundingClientRect();
         console.log(pos);
         let st =  0
-        st = pos.y - 100;
+        st = pos.y - 96;
         window.scrollBy({ 
             top: st
         });
@@ -419,7 +418,7 @@
                 <button on:click|preventDefault={()=>scrollToSection(productsSection)} class="hover:text-tss-600"  >Products</button>
             </div>
             <div class="my-auto">
-                <a href="#contact" class="hover:text-tss-600"  >Contact</a>
+                <button on:click|preventDefault={()=>scrollToSection(contactSection)} class="hover:text-tss-600"  >Contact</button>
             </div>
         </div>
     </div>
@@ -445,7 +444,7 @@
         <a on:click|preventDefault={()=>scrollToSection(clientSection)} class="block" href="#services" >Clientele</a>
         <a on:click|preventDefault={()=>scrollToSection(servicesSection)} class="block" href="#services" >Services</a>
         <a on:click|preventDefault={()=>scrollToSection(productsSection)} class="block" href="#products" >Products</a>
-        <a class="block" href="#contact" >Contact</a>
+        <a on:click|preventDefault={()=>scrollToSection(contactSection)} class="block" href="#contact" >Contact</a>
     </div>
 
 </div>
@@ -537,12 +536,12 @@
                     life.`} className="animate__delay-5s animate__slideInLeft animate__slower" />
             </p>
         </div>
-        <a href="#contact" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl lg:text-lg ring-2 hover:ring-4" >
+        <!-- <a href="#contact" class="mt-8 bg-tss-accent py-4 px-8 inline-block rounded-full text-white hover:bg-indigo-800 shadow-lg hover:shadow-xl lg:text-lg ring-2 hover:ring-4" >
             Reach out to us
             <svg class="fill-current text-white inline" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11H2V13H18.17Z"></path>
             </svg>
-        </a>
+        </a> -->
     </div>
 </div>
 
@@ -621,9 +620,9 @@
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
 
         <div class="mt-4 grid lg:grid-cols-3 grid-cols-2" >
-            {#each products as { name, bg, content, img, arr} }
+            {#each products as { name, bg, arr} }
                 <div class="bg-white rounded-md m-1 flex flex-col" >
-                    <div on:click={()=>openDG(arr)} >
+                    <div class="cursor-pointer" on:click={()=>openDG(arr)} >
                         <img class="lg:h-64 h-36 block mx-auto" alt={name} src={bg} />
                     </div>
                     <div class="text-center my-auto py-2" >
@@ -661,7 +660,7 @@
 </div>
 
 <!-- CONTACT US -->
-<div id="contact" class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200 lg:grid lg:grid-cols-4" >
+<div id="contact" bind:this={contactSection} class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200 lg:grid lg:grid-cols-4" >
     <div class="lg:col-span-3 " >
         <div>
             <h3 class="text-tss-accent lg:text-3xl text-3xl font-display mt-2" > Reach out to us </h3>
@@ -773,5 +772,3 @@
         </div>
     </div>
 </div>
-
-
