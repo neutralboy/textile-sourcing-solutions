@@ -98,7 +98,8 @@
 <script>
     import {onMount} from "svelte";
     import FadeInText from "../modules/FadeInText.svelte";
-    import { Lightbox, LightboxGallery, LightboxImage } from 'svelte-lightbox';
+
+    import Lightbox from "svelte-lightbox/src/Lightbox.svelte";
 
     let Carousel;
     let DesktopCarousel;
@@ -116,6 +117,44 @@
     let navOpen = false;
     let kmDesc = "";
     let kmHeading = "";
+
+    let dg;
+    let lgb;
+    let GLightbox;
+
+
+    const LIGHTBOX_PICTURS_mensWear = [
+        "https://res.cloudinary.com/poorna/image/upload/v1637334331/tss/mens-wear/Screenshot_from_2021-11-19_20-34-15.png",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334332/tss/mens-wear/Screenshot_from_2021-11-19_20-35-11.png",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334335/tss/mens-wear/Screenshot_from_2021-11-19_20-33-48.png",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334336/tss/mens-wear/Screenshot_from_2021-11-19_20-34-42.png",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334339/tss/mens-wear/Screenshot_from_2021-11-19_20-34-58.png"
+    ]
+    const LIGHTBOX_PICTURS_womensWear = [
+        "https://res.cloudinary.com/poorna/image/upload/v1637334414/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.14.36.jpg",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334414/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.13.46.jpg"
+    ]
+    const LIGHTBOX_PICTURS_outerWear = [
+        "https://res.cloudinary.com/poorna/image/upload/v1637334561/tss/outer-wear/Screenshot_from_2021-11-19_20-38-39.png",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334561/tss/outer-wear/Screenshot_from_2021-11-19_20-38-24.png",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334561/tss/outer-wear/Screenshot_from_2021-11-19_20-38-54.png"
+    ]
+    const LIGHTBOX_PICTURS_knits = [
+        "https://res.cloudinary.com/poorna/image/upload/v1637334664/tss/knits/Screenshot_from_2021-11-19_20-40-40.png",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334664/tss/knits/Screenshot_from_2021-11-19_20-40-52.png",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334664/tss/knits/Screenshot_from_2021-11-19_20-40-21.png"
+    ]
+    const LIGHTBOX_PICTURS_home = [
+        "https://res.cloudinary.com/poorna/image/upload/v1637334732/tss/home/WhatsApp_Image_2021-11-09_at_12.10.36.jpg",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334733/tss/home/WhatsApp_Image_2021-11-09_at_12.10.36_2.jpg",
+        "https://res.cloudinary.com/poorna/image/upload/v1637334732/tss/home/WhatsApp_Image_2021-11-09_at_12.10.36_1.jpg"
+    ]
+    const LIGHTBOX_PICTURS_accessories = [
+            "https://res.cloudinary.com/poorna/image/upload/v1637334894/tss/accessories/Screenshot_from_2021-11-19_20-44-07.png",
+            "https://res.cloudinary.com/poorna/image/upload/v1637334893/tss/accessories/Screenshot_from_2021-11-19_20-44-26.png",
+            "https://res.cloudinary.com/poorna/image/upload/v1637334892/tss/accessories/Screenshot_from_2021-11-19_20-43-51.png"
+        ]
+
     
     const toggleMoreWindow = () => {
         moreWindowOpen = !moreWindowOpen;
@@ -147,7 +186,9 @@
         const module = await import('svelte-carousel');
         Carousel = module.default;
         DesktopCarousel = module.default;
-        // await import("../modules/maps");
+
+        const mod2 = await import('glightbox');
+        GLightbox = mod2.default;
     });
 
     const scrollToSection = (elem) => {
@@ -278,38 +319,44 @@
             name: "Mens and Kids wear",
             content: "Shirts & Bottoms",
             bg: "https://res.cloudinary.com/poorna/image/upload/v1637084117/tss/Screenshot_from_2021-11-16_23-04-22.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637161610/tss/Screenshot_from_2021-11-17_20-36-41.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637161610/tss/Screenshot_from_2021-11-17_20-36-41.png",
+            arr: LIGHTBOX_PICTURS_mensWear
         },
         {
             name: "Womens wear",
             content: "Tops, Skirts, Dresses & Bottoms",
             bg: "https://res.cloudinary.com/poorna/image/upload/v1637158330/tss/image1.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637079936/tss/womens%20wear.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637079936/tss/womens%20wear.png",
+            arr: LIGHTBOX_PICTURS_womensWear
         },
         {
             name: "Knits",
             content: "Tee, Polo, Sweatshirt & Outerwear",
             bg: "https://res.cloudinary.com/poorna/image/upload/v1637083053/tss/Dribbble_Shot_HDknits.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637161521/tss/Screenshot_from_2021-11-17_20-35-12.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637161521/tss/Screenshot_from_2021-11-17_20-35-12.png",
+            arr: LIGHTBOX_PICTURS_knits
 
         },
         {
             name: "Outer wear Men and Women",
             content: "Apparel & Small Leather Goods",
             bg: "https://res.cloudinary.com/poorna/image/upload/v1637079271/tss/Screenshot_2021-11-16_at_21-43-40_We_can_take_pics_from_the_ppt_for_Accessories_-_leopoorna99_gmail_com_-_Gmail.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637161751/tss/Screenshot_from_2021-11-17_20-38-55.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637161751/tss/Screenshot_from_2021-11-17_20-38-55.png",
+            arr: LIGHTBOX_PICTURS_outerWear
         },
         {
             name: "Accessories",
             content: "Scarves, Jewellery, Bags & Belts",
             bg: "https://res.cloudinary.com/poorna/image/upload/v1637078937/tss/Screenshot_2021-11-16_at_21-38-31_PowerPoint_Presentation_-_Leather_PPT_Men_s_pdf.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637158600/tss/accessories.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637158600/tss/accessories.png",
+            arr: LIGHTBOX_PICTURS_accessories
         },
         {
             name: "Home",
             content: "Towels, Bedsheets & Cushion Covers",
             bg: "https://res.cloudinary.com/poorna/image/upload/c_scale,w_500/v1637077909/tss/WhatsApp_Image_2021-11-09_at_12.10.36.png",
-            img: "https://res.cloudinary.com/poorna/image/upload/v1637077786/tss/Dribbble_Shot_HD.png"
+            img: "https://res.cloudinary.com/poorna/image/upload/v1637077786/tss/Dribbble_Shot_HD.png",
+            arr: LIGHTBOX_PICTURS_home
         }
     ];
 
@@ -322,6 +369,23 @@
         };
 
     };
+
+
+    const openDG = (t=LIGHTBOX_PICTURS_home) => { 
+
+        let renArr = [];
+        t.forEach(e => {
+            renArr.push( { href: e, type: "image" } )
+        });
+
+        lgb = GLightbox({
+            touchNavigation: true,
+            loop: true,
+            elements: renArr
+        });
+        lgb.open();
+    };
+
 </script>
 
 <!-- DESKTOP NAV -->
@@ -506,8 +570,8 @@
 <!-- OUR SERVICES -->
 <div id="services" bind:this={servicesSection} class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-opacity-50 bg-gray-900 services-bg" >
     <video autoplay loop muted class="video-service-ctn" >
-        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,w_2000/v1636440743/tss/pexels-ron-lach-8306452.mp4" type="video/mp4" >
-        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,w_2000/v1636440743/tss/pexels-ron-lach-8306452.webm" type="video/webm" />
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,vc_auto,w_2000/v1637332534/tss/pexels-ron-lach-8306452-ikwdccyp_OzFuq3Tq.mp4" type="video/mp4" >
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,vc_auto,w_2000/v1637332534/tss/pexels-ron-lach-8306452-ikwdccyp_OzFuq3Tq.webm" type="video/webm" />
     </video>
     <div>
         <h4 class="text-xl text-gray-200" >Our Services</h4>
@@ -557,13 +621,10 @@
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
 
         <div class="mt-4 grid lg:grid-cols-3 grid-cols-2" >
-            {#each products as { name, bg, content, img} }
+            {#each products as { name, bg, content, img, arr} }
                 <div class="bg-white rounded-md m-1 flex flex-col" >
-                    <div>
-                        <Lightbox thumbnail description={content} >
-                            <img slot="thumbnail" class="lg:h-64 h-36 block mx-auto" alt={name} src={bg} />
-                            <img alt={name} src={img ? img : bg} slot="image" />
-                        </Lightbox>
+                    <div on:click={()=>openDG(arr)} >
+                        <img class="lg:h-64 h-36 block mx-auto" alt={name} src={bg} />
                     </div>
                     <div class="text-center my-auto py-2" >
                         <h4 class="text-2xl block mx-auto font-display" >{name}</h4>
@@ -576,6 +637,7 @@
 
 
 </div>
+
 
 <!-- PARTNER LOCATIONS -->
 <div class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6" >

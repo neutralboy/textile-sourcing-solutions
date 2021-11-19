@@ -1910,6 +1910,11 @@ fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
+fslightbox@^3.3.0-2:
+  version "3.3.0-2"
+  resolved "https://registry.yarnpkg.com/fslightbox/-/fslightbox-3.3.0-2.tgz#20c828ed1089cd04c03a5704032f9b8e935a6b1f"
+  integrity sha512-4v69NY58bh1ekr/h9mDMd4UTWyD+LE8WaDECI7l541rEXZp4vaItlk8Kz63NphDVwfXr0dtBsqxSkjIExtH/kQ==
+
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -1985,6 +1990,11 @@ git-url-parse@^5.0.1:
   integrity sha1-/j15xnRq4FBIz6UIyB553du6OEM=
   dependencies:
     git-up "^1.0.0"
+
+glightbox@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/glightbox/-/glightbox-3.1.0.tgz#cd78d72978271e19711163367d7730036ef6d6dd"
+  integrity sha512-QVWU40Eao1+1yH7pb/knwbte0qSXxn2Rfrs7H30G/2+9fXW52woCTBA4kKLtoEHPZxXI+JECj+GBqtRGzfBILQ==
 
 glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"
@@ -2562,6 +2572,11 @@ levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
+
+lightgallery@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.3.0.tgz#936f19d36105848fbbdbd7fbb1e43ab9b0605ebe"
+  integrity sha512-kdu+uQM2X4LUN2G2tTp72ZOLfwmGwZFjiVQBqYY2E2zL1ADibKwnxZUBEw2zI5zefDe/71IHg+6kBRTbr8CGyg==
 
 lilconfig@^2.0.3:
   version "2.0.3"
@@ -3744,6 +3759,11 @@ simple-swizzle@^0.2.2:
   integrity sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
   dependencies:
     is-arrayish "^0.3.1"
+
+simplelightbox@^2.10.1:
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/simplelightbox/-/simplelightbox-2.10.1.tgz#623bc09a1f3f87ad943b8c5d94d5dec07de9b9e3"
+  integrity sha512-1NMFYrrC7sd/4uOlRVmqvKRsyab1Z+ak53PLWH+UOLBWL/UL4TFezfOcEZ3e+SSmFgBi7A2cA9MCYp1SdL/cJQ==
 
 slash@^3.0.0:
   version "3.0.0"
