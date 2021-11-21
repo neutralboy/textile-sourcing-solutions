@@ -641,8 +641,8 @@
 
 
 <!-- PARTNER LOCATIONS -->
-<div class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6" >
-    <div >
+<div class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 lg:flex lg:justify-between " >
+    <div class="block " >
         <div >
             <h3 class="lg:text-3xl text-3xl font-display text-gray-800" >Partner locations</h3>
             <div class="w-7 h-1 bg-tss-accent mt-2"></div>
@@ -659,11 +659,9 @@
             </div>
         </div>
     </div>
-</div>
 
-<!-- CONTACT US -->
-<div id="contact" bind:this={contactSection} class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-tss-200 lg:grid lg:grid-cols-4" >
-    <div class="lg:col-span-3 " >
+
+    <div id="contact" bind:this={contactSection} >
         <div>
             <h3 class="text-tss-accent lg:text-3xl text-3xl font-display mt-2" > Reach out to us </h3>
             <div class="w-7 h-1 bg-tss-600 mt-2"></div>
@@ -687,50 +685,10 @@
                 <a href="mailto:contact@tssindia.com" >contact@tssindia.com</a>
             </div>
         </div>
-
-            <!-- <div>
-                <form class="max-w-screen-md grid sm:grid-cols-2 gap-4 text-sm mt-4">
-                  <div>
-                    <label for="name" class="inline-block text-gray-800 text-sm sm:text-base mb-2">Name*</label>
-                    <input required name="name" class="w-full bg-gray-200 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"/>
-                  </div>
-            
-                  <div class="sm:col-span-1">
-                    <label for="company" class="inline-block text-gray-800 text-sm sm:text-base mb-2">Company</label>
-                    <input name="company" class="w-full bg-gray-200 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"/>
-                  </div>
-            
-                  <div class="sm:col-span-1">
-                    <label for="email" class="inline-block text-gray-800 text-sm sm:text-base mb-2">Email*</label>
-                    <input required name="email" class="w-full bg-gray-200 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"/>
-                  </div>
-            
-            
-                  <div class="sm:col-span-2">
-                    <label for="message" class="inline-block text-gray-800 text-sm sm:text-base mb-2">Message*</label>
-                    <textarea required name="message" class="w-full h-64 bg-gray-200 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
-                  </div>
-            
-                  <div class="sm:col-span-2 flex justify-between items-center">
-                    <button type="submit" class=" bg-tss-600 rounded-full px-4 py-3 border-2 border-tss-accent hover:bg-green-800 text-white shadow-md hover:shadow-xl text-lg">
-                        Send
-
-                        <svg class="inline fill-current text-white" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11H2V13H18.17Z"></path>
-                        </svg>
-                            
-
-                    </button>
-            
-                    <span class="text-gray-500 text-sm">*Required</span>
-                  </div>
-            
-                </form>
-              </div> -->
-
-
     </div>
+
 </div>
+
 
 <!-- FOOTER -->
 <div class="bg-tss-200   pt-4 sm:pt-10 lg:pt-12 font-body">
