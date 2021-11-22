@@ -588,8 +588,8 @@
 <!-- OUR SERVICES -->
 <div id="services" bind:this={servicesSection} class="2xl:px-44 lg:px-20 lg:py-10 py-10 px-6 bg-opacity-50 bg-gray-900 services-bg" >
     <video autoplay loop muted class="video-service-ctn" >
-        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,vc_auto,w_2000/v1637332534/tss/pexels-ron-lach-8306452-ikwdccyp_OzFuq3Tq.mp4" type="video/mp4" >
-        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,vc_auto,w_2000/v1637332534/tss/pexels-ron-lach-8306452-ikwdccyp_OzFuq3Tq.webm" type="video/webm" />
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,vc_auto/v1637573278/tss/pexels-ron-lach-8306452-ikwdccyp-ozfuq3tq_TqMN7mn3.mp4" type="video/mp4" >
+        <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,vc_auto/v1637573278/tss/pexels-ron-lach-8306452-ikwdccyp-ozfuq3tq_TqMN7mn3.webm" type="video/webm" />
     </video>
     <div>
         <h4 class="text-xl text-gray-200" >Our Services</h4>
