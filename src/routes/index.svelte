@@ -133,7 +133,9 @@
         "https://res.cloudinary.com/poorna/image/upload/v1637411139/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.12.41.jpg",
         "https://res.cloudinary.com/poorna/image/upload/v1637411108/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.12.19.jpg",
         "https://res.cloudinary.com/poorna/image/upload/v1637334414/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.14.36.jpg",
-        "https://res.cloudinary.com/poorna/image/upload/v1637334414/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.13.46.jpg"
+        "https://res.cloudinary.com/poorna/image/upload/v1637557392/tss/womens-wear/image4.jpg",
+        "https://res.cloudinary.com/poorna/image/upload/v1637557393/tss/womens-wear/image3.jpg",
+        "https://res.cloudinary.com/poorna/image/upload/v1637557394/tss/womens-wear/image2.jpg"
     ]
     const LIGHTBOX_PICTURS_outerWear = [
         "https://res.cloudinary.com/poorna/image/upload/v1637334561/tss/outer-wear/Screenshot_from_2021-11-19_20-38-39.png",
@@ -166,10 +168,10 @@
     };
 
     let brands = [
-            `<img class="block mx-3" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />`,
             `<img class="block mx-3" alt="Ralph Lauren" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1636434111/tss/ralph-lauren-logo-evolution.png" />`,
             // `<img alt="Ralph Lauren" class="block mx-3 h-20" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />`,
             `<img alt="Hollister" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Hollister-symbol.png" />`,
+            `<img class="block mx-3" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />`,
             ` <img alt="American Eagle" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/American-Eagle-Logo-1985.png" />`,
             `<img class="block mx-3 w-32 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_200/v1635942435/tss/877cbd5d8ca8d415a541f9274fcd0ea2.png" alt="Chubbies" />`,
            ` <img class="block mx-3 w-36" src="https://res.cloudinary.com/poorna/image/upload/v1633870707/tss/superdry.png" alt="Superdry" />`,
@@ -293,7 +295,12 @@
                     <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C19.995 7.58378 16.4162 4.00496 12 4ZM17 13H11V7H13V11H17V13Z" fill="#2E3A59"></path>
                     </svg>
                     `,
-            desc: `...`
+            desc: `<ul class="list-disc ml-2" >
+                <li>First time right approach in all process</li>
+                <li>Improve the process cycle time by removing the waiting time at all stages.</li>
+                <li>Review the supply chain & eliminate all non-value-added process</li>
+                <li>Train Vendors about the concept & make them ready for the speed Journey </li>
+            </ul>`
         },
         {
             name: "Fabric R&D",
@@ -302,16 +309,26 @@
                 <path d="M12 23.27L3 16.27L4.62 15.01L11.99 20.74L19.37 15.001L21 16.27L12 23.27ZM12 19L3 12L4.62 10.74L11.99 16.47L19.37 10.73L21 12L12 19ZM12 14.73L4.63 9.00001L3 7.73001L12 0.730011L21 7.73001L19.36 9.00001L12 14.73Z" fill="#2E3A59"></path>
                 </svg>
                 `,
-            desc: `...`
+            desc: `<ul class="list-disc ml-2" >
+                <li>Design & develop Fabrics that are in line with global trend & align the look with the brand signature.</li>
+                <li>Our Fabric experts ensure Fabric sourcing is planned by the strength of Mill Partners. </li>
+                <li>Research & develop Fabric that meet customer price , quality standards & timeline.</li>
+                <li>We work closely with our partners to source quality fabrics @ competitive pricing & track the process from yarn to fabric delivery.</li>
+            </ul>`
         },
         {
             name: "Wash",
-            tagline: "Research & Development",
+            tagline: "The look you need",
             image: `<svg class="inline-block fill-current text-gray-600" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22C7.439 22 4 20.065 4 17.5V6.00003H4.047C4.39672 4.70028 5.33486 3.63927 6.582 3.13303C8.27819 2.34782 10.1313 1.9603 12 2.00003C16.561 2.00003 20 3.93503 20 6.50003C19.999 6.66779 19.9829 6.83513 19.952 7.00003H20V17.5C20 20.065 16.561 22 12 22ZM5.777 9.39403V17.5C5.777 18.519 8.2 20 12 20C15.8 20 18.222 18.519 18.222 17.5V9.39403C16.3471 10.5202 14.1857 11.0781 12 11C9.81398 11.078 7.6523 10.5201 5.777 9.39403ZM12 4.00003C8.2 4.00003 5.777 5.48103 5.777 6.50003C5.777 7.51903 8.2 9.00003 12 9.00003C15.8 9.00003 18.222 7.51903 18.222 6.50003C18.222 5.48103 15.8 4.00003 12 4.00003Z" fill="#2E3A59"></path>
                 </svg>
                 `,
-            desc: `...`
+            desc: `<ul class="list-disc ml-2" >
+                <li>We research & develop new washes in line with global trend & aligned with brand signature.</li>
+                <li>We research & develop new washes that meets all Testing parameters.</li>
+                <li>We research & develop sustainable washes for a better world.</li>
+                <li>Our In-house was Experts work closely with the vendor laundry to translate the experience & the brand signature to achieve the wash look that connects with the Brand.</li>
+            </ul>`
         }
     ];
 
@@ -569,7 +586,7 @@
 </div>
 
 <!-- OUR SERVICES -->
-<div id="services" bind:this={servicesSection} class="2xl:px-44 lg:px-20 lg:py-20 py-10 px-6 bg-opacity-50 bg-gray-900 services-bg" >
+<div id="services" bind:this={servicesSection} class="2xl:px-44 lg:px-20 lg:py-10 py-10 px-6 bg-opacity-50 bg-gray-900 services-bg" >
     <video autoplay loop muted class="video-service-ctn" >
         <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,vc_auto,w_2000/v1637332534/tss/pexels-ron-lach-8306452-ikwdccyp_OzFuq3Tq.mp4" type="video/mp4" >
         <source src="https://res.cloudinary.com/poorna/video/upload/ac_none,c_scale,vc_auto,w_2000/v1637332534/tss/pexels-ron-lach-8306452-ikwdccyp_OzFuq3Tq.webm" type="video/webm" />
@@ -617,7 +634,7 @@
 
 <!-- PRODUCTS -->
 <div id="products" bind:this={productsSection} class="bg-tss-600 products-bg " >
-    <div class="2xl:px-44 lg:px-14 lg:pt-20 pt-8 pb-2 px-6 " >
+    <div class="2xl:px-44 lg:px-14 lg:pt-10 pt-4 pb-2 px-6 " >
         <h3 class="text-3xl text-black font-display" >Products</h3>    
         <div class="w-7 h-1 bg-tss-accent mt-2"></div>
 
@@ -625,7 +642,7 @@
             {#each products as { name, bg, arr} }
                 <div class="bg-white rounded-md m-1 flex flex-col" >
                     <div class="cursor-pointer" on:click={()=>openDG(arr)} >
-                        <img class="lg:h-64 h-36 block mx-auto" alt={name} src={bg} />
+                        <img class="lg:h-56 h-36 block mx-auto" alt={name} src={bg} />
                     </div>
                     <div class="text-center my-auto py-2" >
                         <h4 class="text-2xl block mx-auto font-display" >{name}</h4>
