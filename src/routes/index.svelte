@@ -356,9 +356,9 @@
 
         },
         {
-            name: "Outer wear Men and Women",
+            name: "Outerwear Men and Women",
             content: "Apparel & Small Leather Goods",
-            bg: "https://res.cloudinary.com/poorna/image/upload/v1637334561/tss/outer-wear/Screenshot_from_2021-11-19_20-38-54.png",
+            bg: "https://res.cloudinary.com/poorna/image/upload/v1637559454/tss/outer-wear/WhatsApp_Image_2021-11-22_at_11.04.01.jpg",
             img: "https://res.cloudinary.com/poorna/image/upload/v1637161751/tss/Screenshot_from_2021-11-17_20-38-55.png",
             arr: LIGHTBOX_PICTURS_outerWear
         },
