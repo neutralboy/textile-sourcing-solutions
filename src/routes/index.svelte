@@ -133,7 +133,7 @@
         "https://res.cloudinary.com/poorna/image/upload/v1637334414/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.14.36.jpg",
         "https://res.cloudinary.com/poorna/image/upload/v1637557392/tss/womens-wear/image4.jpg",
         "https://res.cloudinary.com/poorna/image/upload/v1637557393/tss/womens-wear/image3.jpg",
-        "https://res.cloudinary.com/poorna/image/upload/v1637557394/tss/womens-wear/image2.jpg"
+        "https://res.cloudinary.com/poorna/image/upload/v1637557394/tss/womens-wear/image2.jpg",
         "https://res.cloudinary.com/poorna/image/upload/v1637411139/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.12.41.jpg",
         "https://res.cloudinary.com/poorna/image/upload/v1637411108/tss/womens-wear/WhatsApp_Image_2021-11-12_at_17.12.19.jpg"
     ]
