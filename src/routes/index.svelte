@@ -168,21 +168,20 @@
     };
 
     let brands = [
-            `<img class="block mx-3" alt="Ralph Lauren" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1636434111/tss/ralph-lauren-logo-evolution.png" />`,
-            // `<img alt="Ralph Lauren" class="block mx-3 h-20" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Ralph-Lauren-Logo.png" />`,
-            `<img alt="Hollister" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/Hollister-symbol.png" />`,
-            `<img class="block mx-3" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870707/tss/abercrombie-fitch-logo.png" />`,
-            ` <img alt="American Eagle" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870708/tss/American-Eagle-Logo-1985.png" />`,
-            `<img class="block mx-3 w-32 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_200/v1635942435/tss/877cbd5d8ca8d415a541f9274fcd0ea2.png" alt="Chubbies" />`,
-           ` <img class="block mx-3 w-36" src="https://res.cloudinary.com/poorna/image/upload/v1633870707/tss/superdry.png" alt="Superdry" />`,
-           `<img alt="Easter Mountain Sports" class="block mx-3 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_80/v1633870854/tss/eastern-mountain-sports-logo-05F9379E20-seeklogo.com.png" />`,
-           `<img alt="Champion" class="block mx-3 h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/tss/Champion-logo.png" />`,
-           `<img alt="Liliy Pulitzer" class="block mx-3 h-16 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633871690/tss/lilly-pulitzer-logo_0.png" />`,
-            `<img alt="Sundance" class="mx-3 block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1635942907/tss/71835468_10157074377789790_6526269524293976064_n_400x.png" />`,
-            `<img alt="Amazon" class="block mx-3 my-auto h-14" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633870945/tss/amazon-logo-transparent.png" />`,
-            `<img alt="Being Human" class="block mx-3 my-auto h-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_150/v1633871111/tss/41YTcyA8eeL.png" />`,
-            `<img alt="Pantaloons" class="block mx-3 my-auto w-32" src="https://res.cloudinary.com/poorna/image/upload/v1633871039/tss/Pantaloons-Gift-Voucher-SDL026711860-1-90e34.png" />`,
-            `<img alt="Killer" class="mx-3 block h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1635943028/tss/98605b358b0a048af6b8cb3e1011917b.png" />`,
+            `<img class="block mx-3" alt="Ralph Lauren" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/v1636434111/tss/ralph-lauren-logo-evolution.png" />`,
+            `<img alt="Hollister" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/v1633870708/tss/Hollister-symbol.png" />`,
+            `<img class="block mx-3" alt="abercombie" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/v1633870707/tss/abercrombie-fitch-logo.png" />`,
+            ` <img alt="American Eagle" class="block mx-3" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/v1633870708/tss/American-Eagle-Logo-1985.png" />`,
+            `<img class="block mx-3 w-32 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1635942435/tss/877cbd5d8ca8d415a541f9274fcd0ea2.png" alt="Chubbies" />`,
+           ` <img class="block mx-3 w-32" src="https://res.cloudinary.com/poorna/image/upload/v1633870707/tss/superdry.png" alt="Superdry" />`,
+           `<img alt="Easter Mountain Sports" class="block mx-3 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_60/v1633870854/tss/eastern-mountain-sports-logo-05F9379E20-seeklogo.com.png" />`,
+           `<img alt="Champion" class="block mx-3 h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/tss/Champion-logo.png" />`,
+           `<img alt="Liliy Pulitzer" class="block mx-3 h-16 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/v1633871690/tss/lilly-pulitzer-logo_0.png" />`,
+            `<img alt="Sundance" class="mx-3 block" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/v1635942907/tss/71835468_10157074377789790_6526269524293976064_n_400x.png" />`,
+            `<img alt="Amazon" class="block mx-3 my-auto h-14" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/v1633870945/tss/amazon-logo-transparent.png" />`,
+            `<img alt="Being Human" class="block mx-3 my-auto h-24" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_100/v1633871111/tss/41YTcyA8eeL.png" />`,
+            `<img alt="Pantaloons" class="block mx-3 my-auto w-28" src="https://res.cloudinary.com/poorna/image/upload/v1633871039/tss/Pantaloons-Gift-Voucher-SDL026711860-1-90e34.png" />`,
+            `<img alt="Killer" class="mx-3 block h-10 my-auto" src="https://res.cloudinary.com/poorna/image/upload/c_scale,h_70/v1635943028/tss/98605b358b0a048af6b8cb3e1011917b.png" />`,
     ];
 
     onMount(async ()=>{

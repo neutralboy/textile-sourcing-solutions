@@ -5,8 +5,8 @@ const config = {
 	],
 	theme: {
 		fontFamily: {
-			body: ['Architects Daughter'],
-			display: ['Architects Daughter']
+			body: ['Poppins'],
+			display: ['PT Sans']
 		},
 		extend: {
 			colors: {
